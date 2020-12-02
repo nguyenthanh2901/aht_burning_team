@@ -1,9 +1,0 @@
-[33m24435a9[m[33m ([m[1;36mHEAD -> [m[1;32mthanh[m[33m)[m HEAD@{0}: commit: font
-[33m81560d2[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{1}: pull origin master: Fast-forward
-[33mf161e6c[m[33m ([m[1;31morigin/thanh[m[33m, [m[1;32mtoan[m[33m, [m[1;32mtam[m[33m, [m[1;32mquynh[m[33m)[m HEAD@{2}: checkout: moving from master to thanh
-[33m0613327[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{3}: checkout: moving from thanh to master
-[33mf161e6c[m[33m ([m[1;31morigin/thanh[m[33m, [m[1;32mtoan[m[33m, [m[1;32mtam[m[33m, [m[1;32mquynh[m[33m)[m HEAD@{4}: checkout: moving from master to thanh
-[33m0613327[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{5}: commit: all fonts
-[33mf7b38b0[m HEAD@{6}: commit: first font
-[33mad71711[m HEAD@{7}: commit: hi
-[33mf161e6c[m[33m ([m[1;31morigin/thanh[m[33m, [m[1;32mtoan[m[33m, [m[1;32mtam[m[33m, [m[1;32mquynh[m[33m)[m HEAD@{8}: commit (initial): first
