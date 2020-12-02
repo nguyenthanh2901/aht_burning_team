@@ -1,0 +1,11 @@
+<li class='link contact-phone'>
+    <a href="#">
+        <i class="la la-facebook-official"></i>
+        <?php
+        echo $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('header-top-left-contact-phone')
+            ->toHtml();
+        ?>
+    </a>
+</li>
