@@ -1,19 +1,48 @@
 @import 'slick/slick-theme.less';
 @import 'slick/slick.less';
-
+//default button
 button {
-    max-width: 180px;
-    max-height: 40px;
-    color: #fff;
-    .lib-button(@_button-background: #22b725, @_button-font-size: 13px);
-    &:active,
-    &:focus {
-        box-shadow: inset 0 2px 1px rgba(0,0,0,.12);
-    }
+    width: 180px;
+    height: 40px;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    .lib-button(@_button-background: #22b725,
+                @_button-background-active:  #11ab15,
+                @_button-font-family: "Roboto-Bold",
+                @_button-color: #fff,
+                @_button-color-hover: #fff,
+                @_button-color-active: #fff);
     &:hover,
-        &.active {
-           background: #11ab15;
-        }
-
- 
+    &.active {
+        background: #11ab15;
+    }
+    &:visited{
+        background: #11ab15;
+        color: #fff;
+    }
+    //standard button
+    &.standard-button{
+        width: 137px;
+        height: 35px;
+        .lib-button(@_button-background:#fff,
+                    @_button-color: black,
+                    @_button-border: 1px solid black,
+                    @_button-color-hover: #fff,
+                    @_button-background-hover: black,
+                    @_button-font-family: "Roboto-Bold",
+                    @_button-color-active: #fff,
+                    @_button-background-active: black);
 }
+}
+
+input[type="checkbox"], input[type="radio"]{
+    width: 20px;
+    height: 20px;
+}
+input[type="checkbox"]:checked{
+    background: #fff;
+    color: black;
+}
+input:checked ~ .checkmark {
+    background-color: #fff;
+  }
