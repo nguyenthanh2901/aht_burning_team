@@ -1,4 +1,13 @@
+@color-white:#fff;
+@color-2d:#2d2d2f;
+@size-15:15px;
+@size-32:32px;
+@size-100:100px;
 & when (@media-common = true){
+    a:hover, a{
+        text-decoration:none;
+        color:@color-2d;
+    }
     .nav-sections {
         margin-bottom: 0;
     }
@@ -10,8 +19,34 @@
         .banner_content{
             position:absolute;
             top:50%;
+            text-align:center;
+            text-transform: capitalize;
             left:50%;
             transform: translate(-50%,-50%);
+            .title{
+                font-family:"market";
+                font-size: @size-100;
+                color: @color-white;
+            }
+            .summary{
+                font-size: @size-32;
+                color: @color-white;
+                font-family: "Lora-Regular";
+
+            }
+            a{
+                font-family: "OpenSans-Bold";
+                padding:15px 20px;
+                background:@color-2d;
+                font-size:@size-15;
+                color:@color-white;
+                text-transform: uppercase;
+                border:2px solid @color-white;
+            }
+            .button-icon {
+                font-size: 25px;
+                padding-left: 5px;
+            }
         }
     }
 }

@@ -9,6 +9,9 @@
     <body>
         <referenceContainer name="page.wrapper">
             <block class="Magento\Framework\View\Element\Template" name="banner_top" template="Magento_Cms::banner.phtml" before="main.content"/>
+            <referenceContainer name="content">
+                
+            </referenceContainer>
         </referenceContainer>
     </body>
 </page>
