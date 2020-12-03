@@ -1,6 +1,8 @@
 @import 'slick/slick-theme.less';
 @import 'slick/slick.less';
 
+& when (@media-common = true)
+{
 @font-lora-regular: "Lora-Regular";
 @font-roboto-bold: "Roboto-Bold";
 @font-roboto-regular: "Roboto-Regular";
@@ -43,10 +45,10 @@ input[type="checkbox"], input[type="radio"]{
     width: 20px;
     height: 20px;
 }
-input[type="checkbox"]:checked{
-    background: #fff;
-    color: #222;
-}
+// input[type="checkbox"]:checked{
+//     background: #fff;
+//     color: #222;
+// }
 h1{
     font-family: @font-lora-regular;
     font-size: 32px;
@@ -65,7 +67,6 @@ h4{
 }
 a{
     font-family: @font-roboto-regular;
-    line-height: 20px;
     color: #333;
     cursor: pointer;
     &:hover{
@@ -77,4 +78,5 @@ body{
     font-size: 13px;
     line-height: 20px;
     color: #333;
+}
 }
