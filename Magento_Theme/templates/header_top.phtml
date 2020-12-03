@@ -1,0 +1,33 @@
+<div class='header-top-desktop-left'>
+    <?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('header-top-left-contact-phone')
+        ->toHtml();
+    ?>
+</div>
+
+<div class="header-top-desktop-center">
+    <?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('header-top-center-links')
+        ->toHtml();
+    ?>
+</div>
+
+<div class="header-top-mobile-left">
+    <?= $block->getLayout()
+        ->createBlock("Magento\Cms\Block\Block")
+        ->setBlockId("header-top-left-mobile-address")
+        ->toHtml()
+    ?>
+</div>
+
+<div class="header-top-mobile-right">
+    <?= $block->getLayout()
+        ->createBlock("Magento\Cms\Block\Block")
+        ->setBlockId("header-top-mobile-phone-contact")
+        ->toHtml()
+    ?>
+</div>

@@ -1,0 +1,25 @@
+& when (@media-common=true) {
+    .header {
+        &.panel {
+            .header-top-desktop-left {}
+
+            .header-top-desktop-center {
+                display: none;
+            }
+
+            .header-top-mobile-left {}
+
+            .header-top-mobile-right {}
+
+            .header.links {}
+        }
+
+        .header-top-desktop-left {
+            display: none;
+        }
+    }
+}
+
+// .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+// }

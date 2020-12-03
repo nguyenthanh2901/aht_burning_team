@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="catalog.compare.link" remove="true" />
+        <referenceBlock name="my-account-link" remove="true" />
+        <referenceBlock name="header" remove="true" />
+        <referenceBlock name="authorization-link" remove='true' />
+        <referenceBlock name="header" remove='true' />
+
+        <referenceBlock name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="header-top" before="-" template="Magento_Theme::header_top.phtml" />
+            <!-- <block class="Magento\Framework\View\Element\Template" name="header-top-left-mobile-address" before="-" template="Magento_Theme::header/top/address_m.phtml" /> -->
+            <!-- <block class="Magento\Framework\View\Element\Template" name="header-top-mobile-phone-contact" before="header-top-left-mobile-address" template="Magento_Theme::header/top/phone_m.phtml" /> -->
+            <!-- <block class="Magento\Framework\View\Element\Template" name="header-top-contact-phone" before="header-top-mobile-phone-contact" template="Magento_Theme::header/top/phone.phtml" /> -->
+            <!-- <block class="Magento\Framework\View\Element\Template" after="header-top-contact-phone" name="header-top-center-links" template="Magento_Theme::header/top/center_links.phtml" /> -->
+            <block class="Magento\Framework\View\Element\Template" name="header.top.links" after='-'  template="Magento_Theme::header/top/links.phtml" />
+        </referenceBlock>
+    </body>
+</page>
