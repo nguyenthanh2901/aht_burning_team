@@ -1,0 +1,39 @@
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .block-search {
+        input {
+            position: static;
+            height: 40px;
+            max-width: 360px;
+            margin-top: -2px;
+            padding: 0 13px;
+            font-size: 13.17px;
+            line-height: 30px;
+            color: #999999;
+            font-weight: 400;
+            font-family: "Roboto";
+            letter-spacing: 0.6px;
+            width: 360px;
+            margin-left: -5px;
+            border: 2px solid #bbbbbb;
+        }
+
+        .label {
+            display: none;
+        }
+
+        .control {
+            padding: 0;
+            border: none;
+            margin: 0;
+        }
+    }
+}
+
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {}

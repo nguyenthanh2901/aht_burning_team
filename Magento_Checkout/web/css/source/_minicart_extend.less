@@ -1,0 +1,35 @@
+& when (@media-common =true) {
+    .minicart-wrapper {
+        display: inline-block;
+        position: relative;
+        float: right;
+        flex-basis: 27%;
+        text-align: right;
+        display: inline-block;
+        margin-top: 0;
+        margin-right: 5px;
+
+        .action {
+            &.showcart {
+                .counter.qty {
+                    background: #23ad1c;
+                    position: absolute;
+                    top: 3px;
+                    font-size: 11px;
+                    right: -7px;
+                    line-height: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    width: 18px;
+                    padding: 0;
+                    font-family: "Roboto-Regular";
+
+                }
+
+                &:before {
+                    content: url('../images/ic_shopping_cart_black_24px.png')
+                }
+            }
+        }
+    }
+}

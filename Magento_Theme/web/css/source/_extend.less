@@ -1,25 +1,173 @@
 & when (@media-common=true) {
+    .page-header {
+        border-bottom: 0;
+    }
+
+    .panel.wrapper {
+        height: 36px;
+        background-color: #3c3b3e;
+    }
+
     .header {
         &.panel {
+            display: flex;
+            justify-content: space-between;
+
             .header-top-desktop-left {}
 
             .header-top-desktop-center {
                 display: none;
             }
 
-            .header-top-mobile-left {}
+            .header-top-mobile-left {
+                display: flex;
+                align-items: center;
 
-            .header-top-mobile-right {}
+                margin-left: 14px;
 
-            .header.links {}
+                i {
+                    color: white;
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 14.28px;
+                    color: white;
+                    margin: 0;
+                    line-height: 36px;
+                    margin-left: 7px;
+                    font-family: "Roboto-Regular";
+                }
+            }
+
+            .header-top-mobile-right {
+                display: flex;
+                align-items: center;
+                line-height: 36px;
+                margin-left: 14px;
+                flex-basis: 33%;
+
+                .icon-phone {
+                    transform: rotateX(-31deg);
+                    width: 14px;
+                }
+
+                p {
+                    margin-bottom: 0;
+                    font-size: 14.25px;
+                    color: white;
+
+                    line-height: 36px;
+                    margin-left: 8px;
+                    font-family: "Roboto-Regular";
+                }
+            }
+
+            .header.links {
+                .link {
+                    a {}
+                }
+            }
         }
 
         .header-top-desktop-left {
             display: none;
         }
     }
+
+    .header.content {
+        padding-top: 10px;
+
+        .logo {
+            float: left;
+            margin: 0 0 10px 40px;
+            max-width: 50%;
+            width: 43%;
+            margin-left: 28.7%;
+            margin-top: -2px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .nav-toggle {
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            font-size: 0;
+            left: 15px;
+            position: absolute;
+            top: 15px;
+            z-index: 14;
+            width: 44px;
+            /* margin-left: -5px; */
+            height: 44px;
+            background-color: #ffffff;
+            border: 1px solid #eeeeee;
+            margin-left: -5px;
+            margin-top: -5px;
+            box-sizing: border-box;
+
+            &:before {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 25px;
+                line-height: inherit;
+                color: black;
+                content: '\e609';
+                width: 19px;
+                font-family: 'icons-blank-theme';
+                vertical-align: middle;
+                display: inline-block;
+                font-weight: normal;
+                overflow: hidden;
+                speak: none;
+                text-align: center;
+                margin-left: 10px;
+                margin-top: -2px;
+            }
+
+            &:after {
+                content: "Menu";
+                width: 30px;
+                height: 30px;
+                display: block;
+                font-size: 11px;
+                line-height: 20px;
+                color: #333333;
+                font-weight: 400;
+                font-family: "Roboto";
+                text-align: center;
+                margin-left: 6px;
+                margin-top: -11px;
+            }
+        }
+    }
 }
 
-// .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .header {
+        &.panel {
+            .header.links {
+                .link {
+                    a {
+                        font-size: 13px;
+                        line-height: 20px;
+                        color: #ffffff;
+                        font-family: "Roboto-Regular";
 
-// }
+                        em {
+                            font-size: 0;
+
+                            &:before {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
