@@ -35,8 +35,22 @@ button {
                     @_button-background-hover: black,
                     @_button-font-family: "Roboto-Bold",
                     @_button-color-active: #fff,
-                    @_button-background-active: black);
-}
+                    @_button-background-active: black
+                    );
+    }
+    &.back-button{
+        width: 137px;
+        height: 35px;
+        .lib-button(@_button-background:#2d2d2f,
+                    @_button-color: #fff,
+                    @_button-border: 1px solid #fff,
+                    @_button-color-hover: #2d2d2f,
+                    @_button-background-hover: #fff,
+                    @_button-font-family: "Roboto-Bold",
+                    @_button-color-active: #2d2d2f,
+                    @_button-background-active: #fff
+                    );
+    }
 }
 
 input[type="checkbox"], input[type="radio"]{

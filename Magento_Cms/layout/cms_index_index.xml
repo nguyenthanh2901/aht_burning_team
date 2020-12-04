@@ -10,7 +10,7 @@
         <referenceContainer name="page.wrapper">
             <block class="Magento\Framework\View\Element\Template" name="banner_top" template="Magento_Cms::banner.phtml" before="main.content"/>
             <referenceContainer name="content">
-                
+                <block class="Magento\Framework\View\Element\Template" name="banner_tiles" template="Magento_Cms::banner_tiles.phtml" before="-"/>
             </referenceContainer>
         </referenceContainer>
     </body>
