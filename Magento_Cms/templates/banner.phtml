@@ -1,7 +1,47 @@
-<div class="banner">
-    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_img_2')->toHtml();?>
-    <div class="banner_content">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_text_2')->toHtml();?>
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_button')->toHtml();?>
-    </div>
+<div class="banner-top">
+    <?php for ($i=1; $i<=2 ; $i++):?>
+        <div class="banner">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_img_$i")->toHtml();?>
+            <div class="banner_content">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_text_$i")->toHtml();?>
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_button')->toHtml();?>
+            </div>
+        </div>
+    <?php endfor;?>
 </div>
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".banner-top").slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        // centerPadding: '40px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        // centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+            });
+        });
+    });
+</script>
