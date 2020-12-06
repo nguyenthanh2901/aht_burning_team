@@ -26,6 +26,7 @@ button {
         background: #11ab15;
         color: #fff;
     }
+ 
     //standard button
     &.standard-button{
         width: 137px;
@@ -39,6 +40,13 @@ button {
                     @_button-color-active: #fff,
                     @_button-background-active: black);
 }
+    &.standard-button-black{
+        .standard-button;
+        .lib-button(@_button-background:black,
+                    @_button-color: #fff,
+                    @_button-background-hover: #fff,
+                    @_button-color-hover: black)
+    }
 }
 
 input[type="checkbox"], input[type="radio"]{
