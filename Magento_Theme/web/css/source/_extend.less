@@ -226,8 +226,6 @@
     // 
     .nav-sections .header.links li {
         a {
-            color: black;
-
             em:before {
                 display: none;
             }
@@ -248,6 +246,17 @@
     }
 }
 
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .block-search input {
+        position: static;
+        max-width: 360px;
+        height: 100%;
+        border: none;
+        outline: none;
+        margin: 0;
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .header {
