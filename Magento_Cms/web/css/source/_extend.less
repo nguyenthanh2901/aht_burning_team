@@ -18,6 +18,14 @@
 @size-100:100px;
 @size-160:160px;
 
+//FONT
+@font-roboto-bold:"Roboto-Bold";
+@font-lora-re:"Lora-Regular";
+@font-lora-bold:"Lora-Bold";
+@font-openSans-bold:"OpenSans-Bold";
+@font-market-re:"market-regular";
+
+
 & when (@media-common = true){
     button{border-radius:0;}
     p{margin:0;}
@@ -32,20 +40,15 @@
         text-decoration:none;
         color:@color-white;
     }
-    .button{
-        padding:10px 20px;
-        background:@color-2d;
-        font-size:@size-13;
-        color:@color-white;
-        text-transform: uppercase;
-        border:2px solid @color-white;
-        
+    button.standard-button-black {
+        background: @color-2d;
+        border: 1px solid @color-white;
     }
     .button-icon {
         font-size: @size-20;
     }
     .title{
-        font-family: "Lora-Bold";
+        font-family: @font-lora-bold;
         font-size: @size-24;
         color:@color-white;
         text-align:center;
@@ -65,7 +68,7 @@
             transform: translate(-50%, -50%);
             width: 100%;
             .title{
-                font-family:"market-regular";
+                font-family:@font-market-re;
                 font-size: @size-53;
             }
             .summary{
@@ -73,12 +76,12 @@
                 font-size: @size-20;
                 letter-spacing: 1px;
                 word-spacing: 5px;
-                color: #fff;
-                font-family: "Lora-Regular";
+                color: @color-white;
+                font-family: @font-lora-re;
 
             }
             a{
-                font-family: "OpenSans-Bold";
+                font-family: @font-openSans-bold;
             }
         
         }
@@ -93,6 +96,9 @@
         
         p{
             border-right:1px solid @color-2d;
+            a{
+                font-family:""
+            }
             .button-icon {
                 font-size: 20px;
                 padding-left: 5px;
@@ -117,7 +123,7 @@
                     letter-spacing: 1px;
                 }
                 a{
-                    font-family:"Lora-Bold";
+                    font-family:@font-lora-bold;
                 }
                 .back-button{
                     border:1px solid @color-white;
@@ -135,10 +141,10 @@
                 color:@color-2;
                 text-transform: capitalize;
             }
-            .back-button{
-                background:@color-e;
-                color:@color-black;
-            }
+            // .back-button{
+            //     background:@color-e;
+            //     color:@color-black;
+            // }
         }
     }
 }
