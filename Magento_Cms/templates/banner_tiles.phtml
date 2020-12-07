@@ -1,77 +1,78 @@
 <div class="row">
-    <div class="tiles">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('tiles_top_left_img')->toHtml(); ?>
-        <div class="tiles_content">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('tiles_top_left_title')->toHtml(); ?>
+    <?php for ($i=1; $i <=2 ; $i++):?>
+        <div class="tiles">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_img_$i")->toHtml(); ?>
+            <div class="tiles_content">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_title_$i")->toHtml(); ?>
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('button_shop_now')->toHtml(); ?>
+            </div>
+        </div>
+    <?php endfor;?>
+</div>
+<div class="reason-carosel ">
+    <?php for ($i=1; $i <=3 ; $i++): ?>
+        <div class="carosel-item">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("reason_carosel_text_$i")->toHtml(); ?>
+        </div>
+       <?php endfor; ?>
+
+</div>
+<div class="row">
+<?php for ($i=1; $i <=3 ; $i++): ?>
+    <div class="tiles banner-tiles2">
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_img_$i")->toHtml(); ?>
+        <div class="collection-content">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_text_$i")->toHtml(); ?>
             <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('button_shop_now')->toHtml(); ?>
         </div>
     </div>
-    <div class="tiles">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('tiles_top_right_img')->toHtml(); ?>
-        <div class="tiles_content">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('tiles_top_right_title')->toHtml(); ?>
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('button_shop_now')->toHtml(); ?>
+<?php endfor;?>
+</div>
+<div class="row">
+        <div class="tiles">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_1")->toHtml(); ?>
+            <div class="tiles_content">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_title_1")->toHtml(); ?>
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('button_explore')->toHtml(); ?>
+            </div>
         </div>
-    </div>
+        <div class="tiles">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_2")->toHtml(); ?>
+        </div>
 </div>
-<div class="reason-carosel">
-
-
-    <?php for ($i=0; $i <=3 ; $i++) :?>
-        <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("reason_carosel_text_$i")->toHtml(); ?>
-    <?php endfor; ?>
-    
-</div>
-<div class="banner-tiles2">
-    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_bottom_left_img')->toHtml(); ?>
-    <div class="collection-content">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_bottom_left_text')->toHtml(); ?>
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('button_shop_now')->toHtml(); ?>
-    </div>
-</div>
-<ul class="my-list">
-    <li>1st Element</li>
-    <li>2nd Element</li>
-    <li>3rd Element</li>
-    <li>4th Element</li>
-    <li>5th Element</li>
-    <li>6th Element</li>
-    <li>7th Element</li>
-    <li>8th Element</li>
-</ul>
 <script>
-//     require([
-//         'jquery',
-//         'slick'
-//     ], function ($) {
-//         $(document).ready(function () {
-//             $(".my-list").slick({
-//                 dots: false,
-//                 infinite: true,
-//                 speed: 300,
-//                 slidesToShow: 4,
-//                 slidesToScroll: 1,
-//                 responsive: [
-//     {
-//       breakpoint: 768,
-//       settings: {
-//         arrows: false,
-//         centerMode: true,
-//         centerPadding: '40px',
-//         slidesToShow: 3
-//       }
-//     },
-//     {
-//       breakpoint: 480,
-//       settings: {
-//         arrows: false,
-//         centerMode: true,
-//         centerPadding: '40px',
-//         slidesToShow: 1
-//       }
-//     }
-//   ]
-//             });
-//         });
-//     });
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".reason-carosel").slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        // centerPadding: '40px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        // centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+            });
+        });
+    });
 </script>
