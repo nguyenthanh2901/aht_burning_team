@@ -1,0 +1,35 @@
+// @import '../../../../web/css/source/slick/slick.less';
+// @import '../../../../web/css/source/slick/slick-theme.less';
+
+& when (@media-common = true) {
+    .block-products-list {
+        button.action.tocart.primary {
+            border-radius: 0px;
+        }
+    }
+}
+
+// Tablet (>= 768px)
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {} 
+
+//
+//  Mobile @screen__m
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-products-list {
+        button.action.tocart.primary {
+           width: 100%; 
+        }
+    }
+}
+
+//
+//  Mobile @screen__s
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = 480px) {
+
+}
