@@ -19,5 +19,38 @@
             <block class="Magento\Framework\View\Element\Template" name="header-top" before="-" template="Magento_Theme::header_top.phtml" />
             <block class="Magento\Framework\View\Element\Template" name="header.top.links" after='-'  template="Magento_Theme::header/top/links.phtml" />
         </referenceBlock>
+
+
+         <referenceContainer name="footer-container">
+             <container name='footer.showroom.container' htmlTag='div' htmlClass='footer-showroom-container' label='Footer Showroom'>
+                 <block name='footer-showroom' class='Magento\Framework\View\Element\Template' before='-' template='Magento_Theme::footer_showroom.phtml' />
+             </container>
+             <container name='footer.banner.container' htmlTag='div' htmlClass='footer-banner-container' label='Footer Banner'>
+                 <block name='footer-banner' class='Magento\Framework\View\Element\Template' template='Magento_Theme::footer_banner.phtml' />
+             </container>
+
+             <container name='footer.top.container' htmlTag='div' htmlClass='footer-top-container' label='Footer Top'>
+                 <block name='footer-top' class='Magento\Framework\View\Element\Template' template='Magento_Theme::footer_top.phtml' />
+             </container>
+             
+             <container name='footer.middle.container' htmlTag='div' htmlClass='footer-middle-container' label='Footer Middle'>
+                 <block name='footer-middle' class='Magento\Framework\View\Element\Template' template='Magento_Theme::footer_middle.phtml' />
+             </container>
+
+             <container name='footer-newsletter-container' htmlTag='div' htmlClass="footer-newsletter-container" label="Footer Newsletter">
+                 <block class="Magento\Framework\View\Element\Template" name="footer.social-links" template="Magento_Theme::footer_social.phtml" />
+             </container>
+            <!-- <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
+                <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="Magento_Store::switch/stores.phtml"/>
+                <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">footer links</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/copyright.phtml"/>
+                <block class="Magento\Framework\View\Element\Template" name="report.bugs" template="Magento_Theme::html/bugreport.phtml" ifconfig="design/footer/report_bugs"/>
+            </container> -->
+        </referenceContainer>
+        <move element='form.subscribe' destination="footer-newsletter-container" before='-'/>
     </body>
 </page>

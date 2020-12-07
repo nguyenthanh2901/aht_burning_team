@@ -1,0 +1,8 @@
+<?php for ($i = 2; $i <= 3; $i++) : ?>
+    <div class="footer-middle-links-$i">
+        <?= $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId("footer-middle-links-$i")
+            ->toHtml() ?>
+    </div>
+<?php endfor; ?>
