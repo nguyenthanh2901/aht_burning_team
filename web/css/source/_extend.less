@@ -10,14 +10,17 @@
 button {
     width: 180px;
     height: 40px;
+    letter-spacing: -1px;
     font-size: 13px !important;
+    border-radius: 0;
     text-transform: uppercase;
     .lib-button(@_button-background: #22b725,
                 @_button-background-active:  #11ab15,
                 @_button-font-family: "Roboto-Bold",
                 @_button-color: #fff,
                 @_button-color-hover: #fff,
-                @_button-color-active: #fff);
+                @_button-color-active: #fff,
+                @_button-border: 1px solid #22b725);
     &:hover,
     &.active {
         background: #11ab15;
@@ -28,18 +31,20 @@ button {
     }
  
     //standard button
-    &.standard-button{
-        width: 137px;
-        height: 35px;
+    &.standard-button, 
+    &.action.tocart.primary{
+        width: 140px;
+        height: 40px;
         .lib-button(@_button-background:#fff,
                     @_button-color: black,
                     @_button-border: 1px solid black,
                     @_button-color-hover: #fff,
                     @_button-background-hover: black,
-                    @_button-font-family: "Roboto-Bold",
+                    @_button-font-family: @font-roboto-bold,
                     @_button-color-active: #fff,
                     @_button-background-active: black);
 }
+    //standard balck button
     &.standard-button-black{
         .standard-button;
         .lib-button(@_button-background:black,
@@ -48,15 +53,52 @@ button {
                     @_button-color-hover: black)
     }
 }
-
-input[type="checkbox"], input[type="radio"]{
-    width: 20px;
-    height: 20px;
+// input field
+input[type='checkbox'],input[type="radio"]{
+    visibility:hidden;
 }
-// input[type="checkbox"]:checked{
-//     background: #fff;
-//     color: #222;
-// }
+label {
+  cursor: pointer;
+  position:relative;
+}
+input[type="checkbox"] + label:before, input[type="radio"] + label:before{
+  border: 1px solid #ddd;
+  content: "";
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+}
+input[type="radio"]:checked + label:after {
+  background: #333;
+  color: #fff;
+  content: "";
+  text-align: center;
+
+}
+input[type="checkbox"]:checked + label:before{
+    background: white;
+    color: black;
+    content: "\2713";
+    text-align: center;
+    font-size: 20px;
+}
+input[type="radio"] + label:before{
+    border-radius:50%;
+    vertical-align: baseline;
+  }
+  input[type="radio"]:checked + label:after {
+    content: "";
+    width:8px;
+    height:8px;
+    position:absolute;
+    left:0;
+    margin: 7px;
+    border-radius:50%;
+  }
+
 h1{
     font-family: @font-lora-regular;
     font-size: 32px;
@@ -87,4 +129,25 @@ body{
     line-height: 20px;
     color: #333;
 }
+input[type=text], select{
+    width: 320px;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 30px;
+    color: #333;
+    font-family: @font-roboto-regular;
+    text-align: left;
+    padding: 0 13px;
+    letter-spacing: 0.5px;
+    &:focus{
+        box-shadow: none;
+    }
+  }
+  select:not([disabled]):focus{
+    box-shadow: none;
+  }
+  select{
+    padding: 0 9px;
+  }
 }
