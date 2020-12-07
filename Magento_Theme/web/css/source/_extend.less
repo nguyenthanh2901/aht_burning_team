@@ -43,7 +43,7 @@
             max-width: 50%;
             width: 43%;
             margin-left: 28.7%;
-            margin-top: -2px;
+            margin-top: -3px;
             position: relative;
             z-index: 5;
         }
@@ -69,10 +69,16 @@
     }
 }
 
+@indent__s : 8px;
+
 & when (@media-common=true) {
 
     .page-header {
         border-bottom: 0;
+
+        .panel.header {
+            padding: 0 10px 0 11px;
+        }
     }
 
     .panel.wrapper {
@@ -86,7 +92,6 @@
     .header {
         &.panel {
             display: flex;
-            padding: 0 11px !important;
             justify-content: space-between;
 
             .header-top-desktop-left {
@@ -101,38 +106,27 @@
                 display: flex;
                 align-items: center;
 
-                i {
-                    color: white;
-                    font-size: 20px;
-                }
-
                 p {
-                    font-size: 14.28px;
-                    color: white;
-                    margin: 0;
-                    line-height: 36px;
-                    margin-left: 7px;
+                    color: #ffffff;
                     font-family: "Roboto-Regular";
+                    margin: 0;
+                    font-size: 13px;
+                    .lib-css(margin-left, @indent__s);
                 }
             }
 
             .header-top-mobile-right {
                 display: flex;
                 align-items: center;
-                line-height: 30px;
-
-                .icon-phone {
-                    transform: rotateX(-31deg);
-                    width: 14px;
-                }
+                line-height: 35px;
 
                 p {
-                    margin-bottom: 0;
-                    font-size: 14.25px;
-                    color: white;
 
+                    font-size: 13px;
+                    margin-bottom: 0;
+                    color: white;
                     line-height: 36px;
-                    margin-left: 8px;
+                    .lib-css(margin-left, @indent__s);
                     font-family: "Roboto-Regular";
                 }
             }
