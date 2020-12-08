@@ -35,11 +35,11 @@
              
              <container name='footer.middle.container' htmlTag='div' htmlClass='footer-middle-container' label='Footer Middle'>
                  <block name='footer-middle' class='Magento\Framework\View\Element\Template' template='Magento_Theme::footer_middle.phtml' />
+                 <container name='footer-newsletter-container' htmlTag='div' htmlClass="footer-newsletter-container" label="Footer Newsletter">
+                     <block class="Magento\Framework\View\Element\Template" name="footer.social-links" template="Magento_Theme::footer_social.phtml" />
+                 </container>
              </container>
 
-             <container name='footer-newsletter-container' htmlTag='div' htmlClass="footer-newsletter-container" label="Footer Newsletter">
-                 <block class="Magento\Framework\View\Element\Template" name="footer.social-links" template="Magento_Theme::footer_social.phtml" />
-             </container>
             <!-- <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
                 <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="Magento_Store::switch/stores.phtml"/>
                 <block class="Magento\Framework\View\Element\Html\Links" name="footer_links">

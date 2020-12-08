@@ -1,8 +1,18 @@
-<?= $block->getLayout()
-    ->createBlock('Magento\Cms\Block\Block')
-    ->setBlockId('footer-banner-bg')
-    ->toHtml() ?>
-<?= $block->getLayout()
-    ->createBlock('Magento\Cms\Block\Block')
-    ->setBlockId('footer-banner-content')
-    ->toHtml() ?>
+<div class='footer-banner-desktop-bg'>
+    <?= $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer-banner-desktop-bg')
+        ->toHtml() ?>
+</div>
+<div class="footer-banner-mobile-bg">
+    <?= $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer-banner-mobile-bg')
+        ->toHtml() ?>
+</div>
+<div class="footer-banner-content">
+    <?= $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer-banner-content')
+        ->toHtml() ?>
+</div>

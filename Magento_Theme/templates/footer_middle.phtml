@@ -1,8 +1,35 @@
-<?php for ($i = 2; $i <= 3; $i++) : ?>
-    <div class="footer-middle-links-$i">
-        <?= $block->getLayout()
-            ->createBlock('Magento\Cms\Block\Block')
-            ->setBlockId("footer-middle-links-$i")
-            ->toHtml() ?>
-    </div>
-<?php endfor; ?>
+<div class="footer-middle-desktop-container">
+    <?php for ($i = 1; $i <= 3; $i++) : ?>
+        <div class="footer-middle-links-<?= $i ?>">
+            <?= $block->getLayout()
+                ->createBlock('Magento\Cms\Block\Block')
+                ->setBlockId("footer-middle-links-$i")
+                ->toHtml() ?>
+        </div>
+    <?php endfor; ?>
+</div>
+<div class="footer-middle-mobile-container">
+    <?php for ($i = 1; $i <= 3; $i++) : ?>
+        <div class="footer-middle-links-<?= $i ?>">
+            <?= $block->getLayout()
+                ->createBlock('Magento\Cms\Block\Block')
+                ->setBlockId("footer-middle-links-$i")
+                ->toHtml() ?>
+        </div>
+    <?php endfor; ?>
+</div>
+
+<script>
+    require(['jquery', 'accordion'], function($) {
+        for (let i = 1; i <= 3; i++) {
+            let dataCollapse = $('.footer-middle-links-' + i)
+            dataCollapse.attr('data-role', 'collapsible')
+            let titleTrigger = $('.footer-middle-links-' + i + ' >:first-child');
+            titleTrigger.attr('data-role', 'trigger');
+            let content = $('.footer-middle-links-' + i + '>:last-child');
+            content.attr('data-role', 'content');
+        }
+
+        $(".footer-middle-mobile-container").accordion();
+    })
+</script>
