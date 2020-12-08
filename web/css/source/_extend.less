@@ -2,29 +2,19 @@
 @import 'slick/slick.less';
 
 & when (@media-common =true) {
-    @font-lora-bold: "Lora-Bold";
-    @font-lora-regular: "Lora-Regular";
-    @font-roboto-bold: "Roboto-Bold";
-    @font-roboto-regular: "Roboto-Regular";
-    @color-green-default: #22b725;
-    @color-green-standard: #11ab15;
-    @color-green-message: #68c524;
-    @color-red-validate: #ed1313;
-   
     //default button
     button {
-
-        letter-spacing: -1px;
         border-radius: 0;
         text-transform: uppercase;
         .lib-button(@_button-background: @color-green-default,
             @_button-background-active: @color-green-standard,
-            @_button-font-family: "Roboto-Bold",
+            @_button-font-family: @font-roboto-bold,
             @_button-color: @color-white,
             @_button-color-hover: @color-white,
             @_button-color-active: @color-white,
             @_button-border: 1px solid @color-green-default,
-            @_button-font-size: 13px);
+            @_button-font-size: 13px,
+            @_button-background-hover: @color-green-standard);
 
         &:hover,
         &.active {
@@ -213,10 +203,10 @@
     .row{
         margin:20px 0;
         display:flex;
-        .tiles {
+        .col {
             margin: 0 10px;
             position: relative;
-            .tiles_content {
+            .col-content {
                 text-align: center;
                 position: absolute;
                 top: 50%;
@@ -224,10 +214,7 @@
                 width: 100%;
                 transform: translate(-50%, -50%);
                 text-transform: uppercase;
-                .title{
-                    margin-bottom:15px;
-                    letter-spacing: 1px;
-                }
+
                 a{
                     font-family:@font-lora-bold;
                 }
@@ -235,4 +222,9 @@
         }
         
     }
+    //navigation
+    .navigation-tab {
+        .lib-data-tabs();
+    }
+    
 }
