@@ -1,11 +1,64 @@
-// @import '../../../../web/css/source/slick/slick.less';
-// @import '../../../../web/css/source/slick/slick-theme.less';
 
 & when (@media-common = true) {
+    .page-main {
+        margin-left: 161px;
+    }
+
+    .section-new-seller {
+        margin-top: 2336px;
+    }
+
     .block-products-list {
+        .block-title {
+            width: 100%;
+            text-align: center;
+            strong {
+                font-size: 32px;
+                margin-left: 90px;
+                letter-spacing: 1.7px;
+                font-family: 'Lora', serif;
+            }
+        }
+
+        .actions-secondary {
+            display: none;
+        }
+        
         button.action.tocart.primary {
             border-radius: 0px;
         }
+
+        .slick-prev,
+        .slick-next {
+            border-radius: 50%;
+            border: 1px solid @color-gray52;
+            width: 30px;
+            height: 30px;
+            z-index: 1;
+            background-color: @color-white;
+            &::before {
+                color: @color-black;
+                margin-left: 2px;
+                font-size: 2em;
+            }
+        }
+        
+        .slick-prev{
+            left: 0;
+            &::before {
+                content: "\2039";
+                margin-left: 7px;
+            }
+        }
+
+        .slick-next {
+            right: 0px;
+            &::before {
+                content: "\203A";
+                margin-left: 8px;
+            }
+        }
+        
     }
 }
 
