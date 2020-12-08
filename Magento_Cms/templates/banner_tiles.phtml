@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row tiles">
     <?php for ($i=1; $i <=2 ; $i++):?>
-        <div class="tiles">
+        <div class="col">
             <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_img_$i")->toHtml(); ?>
-            <div class="tiles_content">
+            <div class="col-content">
                 <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_title_$i")->toHtml(); ?>
                 
             </div>
@@ -19,7 +19,7 @@
 </div>
 <div class="row">
 <?php for ($i=1; $i <=3 ; $i++): ?>
-    <div class="tiles banner-tiles2">
+    <div class="col banner-tiles2">
         <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_img_$i")->toHtml(); ?>
         <div class="collection-content">
             <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_text_$i")->toHtml(); ?>
@@ -29,13 +29,13 @@
 <?php endfor;?>
 </div>
 <div class="row">
-        <div class="tiles">
+        <div class="col">
             <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_1")->toHtml(); ?>
-            <div class="tiles_content">
+            <div class="col-content">
                 <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_title_1")->toHtml(); ?>
             </div>
         </div>
-        <div class="tiles">
+        <div class="col">
             <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_2")->toHtml(); ?>
         </div>
 </div>

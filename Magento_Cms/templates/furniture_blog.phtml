@@ -4,8 +4,10 @@
     ?>
     <div class="row">
         <?php for ($i=1; $i <=6 ; $i++):?>
-            <div class="furniture-blog">
-                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("ourblog_item_$i")->toHtml();?>
+            <div class="col-3 ">
+                <div class="furniture-blog">
+                    <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("ourblog_item_$i")->toHtml();?>
+                </div>
             </div>
         <?php endfor?>
     </div>
