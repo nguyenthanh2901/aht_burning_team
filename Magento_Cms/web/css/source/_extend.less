@@ -1,5 +1,36 @@
 
+//COLOR
+@color-whitef:#fff;
+@color-whitee:#eee;
+@color-black2d:#2d2d2f;
+@color-black:black;
+@color-black2:#222;
+@color-black3:#333;
+@color-grayc:#ccc;
 
+//SIZE
+@size-13:13px;
+@size-15:15px;
+@size-18:18px;
+@size-20:20px;
+@size-24:24px;
+@size-25:25px;
+@size-32:32px;
+@size-42:42px;
+@size-53:53px;
+@size-60:60px;
+@size-100:100px;
+@size-160:160px;
+@size-200:200px;
+
+//FONT
+@font-roboto-re:"Roboto-Regular";
+@font-roboto-bold:"Roboto-Bold";
+@font-lora-re:"Lora-Regular";
+@font-lora-bold:"Lora-Bold";
+@font-openSans-bold:"OpenSans-Bold";
+@font-market-re:"market-regular";
+//MARGIN
 & when (@media-common = true){
     button{border-radius:0;}
     p{margin:0;}
@@ -10,10 +41,6 @@
     .page-main{
         margin:0 10px;
     }
-    a:hover ,a,a:visited, .alink:visited{
-        text-decoration:none;
-        color:@color-whitef;
-    }
     button.standard-button-black {
         background: @color-black2d;
         border: 1px solid @color-whitef;
@@ -22,7 +49,7 @@
         font-size: @size-20;
     }
     .title{
-        font-family: @font-lora-bold;
+        font-family: @font-lora-re;
         font-size: @size-24;
         color:@color-white;
         text-align:center;
@@ -72,7 +99,8 @@
         p{
             border-right:1px solid @color-black2d;
             a{
-                font-family:@font-lora-bold;
+                color:@color-whitef;
+                font-family:@font-roboto-bold;
             }
             .button-icon {
                 font-size: @size-20;
@@ -94,6 +122,7 @@
                 transform: translate(-50%, -50%);
                 text-transform: uppercase;
                 .title{
+                    font-family: @font-lora-bold;
                     margin-bottom:15px;
                     letter-spacing: 1px;
                 }
@@ -108,18 +137,86 @@
         
     }
     .banner-tiles2{
-        background:@color-e;
+        background:@color-whitee;
         .collection-content {
             text-align: Center;
             padding: 15px;
             .title{
-                color:@color-2;
+                font-family:@font-lora-re;
+                color:@color-black2;
                 text-transform: capitalize;
             }
             // .back-button{
             //     background:@color-e;
             //     color:@color-black;
             // }
+        }
+    }
+    .our-blog{
+        position:relative;
+        font-family: @font-lora-re;
+        .blog-border{
+            font-size:@size-32;
+            text-align:center;
+        }
+        .blog-border:before {
+            content: '';
+            width: 40%;
+            border-bottom: 1px solid @color-grayc;
+            top: 11px;
+            position: absolute;
+            left: 0;
+        }
+        .blog-border:after {
+            content: "";
+            width: 40%;
+            position: absolute;
+            right: 0;
+            border-bottom: 1px solid @color-grayc;
+            top: 11px;
+        }
+        .blog-content{
+            margin:15px 0;
+            .title{
+                color:@color-black2;
+            }
+            .summary{
+                color:@color-black3;
+                font-family: @font-roboto-re;
+                padding:15px 0;
+            }
+            a{
+                font-size:@size-13;
+                color: @color-black3;
+                text-decoration: underline;
+            }
+        }
+    }
+    .testimonial-blog {
+        position: relative;
+        text-align:center;
+        .blog-border {
+            text-align: center;
+            font-size: @size-32;
+        }
+        .blog-border::before {
+            content: '';
+            width: 34%;
+            position: absolute;
+            top: 12px;
+            border-bottom: 1px solid @color-grayc;
+            left: 0;
+        }
+        .blog-border::after{
+            content:'';
+            position:absolute;
+            right:0;
+            width:34%;
+            top:12px;
+            border-bottom:1px solid @color-grayc;
+        }
+        .testimonial{
+            text-align:left;
         }
     }
 }
@@ -136,6 +233,23 @@
         //     padding:0 10px;
         // }
     }
+    .our-blog .row{
+        flex-wrap: wrap;
+        .furniture-blog {
+            max-width: 32%;
+            width: 100%;
+            padding: 0 8px;
+        }
+        .blog-content{
+            .title{
+                text-align:left;
+                font-size: @size-18;
+            }
+            .summary{
+                font-size:@size-13;
+            }
+        }
+    }
     
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l){
@@ -145,6 +259,7 @@
         text-transform: uppercase;
         
     }
+    .banner-top{overflow: hidden;}
    .banner{
     .banner_content{
         .title{
@@ -167,4 +282,5 @@
         }
         
     }
+    
 }

@@ -1,0 +1,13 @@
+<div class="testimonial-blog">
+    <?=
+    $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('blog_testimonial_head')->toHtml();
+    ?>
+    <div class="row">
+        <?php for ($i=1; $i <= 4 ; $i++):?>
+            <div class="testimonial">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("testimonial_blog_text_$i")->toHtml(); ?>
+            </div>
+        <?php endfor;?>
+    </div>
+    <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('testimonial_blog_button')->toHtml(); ?>
+</div>
