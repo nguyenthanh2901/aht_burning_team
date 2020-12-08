@@ -1,10 +1,22 @@
 <div class="section-new-seller">
-    <?php
-    echo $block->getLayout()
-            ->createBlock('Magento\Cms\Block\Block')
-            ->setBlockId('new-sellers')
-            ->toHtml();
-    ?>
+    <div class="title">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('title-best-sellers')
+                    ->toHtml();
+        ?>
+        <hr class="line-throught">
+    </div>
+
+    <div class="content">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('new-sellers')
+                    ->toHtml();
+        ?>
+    </div>
 </div>
 
 <script>
@@ -14,8 +26,9 @@
     ], function ($) {
         $(document).ready(function () {
             $(".product-items").slick({
+                rows: 1,
                 slidesToShow: 4,
-                slidesToScroll: 4,
+                slidesToScroll: 1,
                 dots: false,
                 infinite: true,
                 speed: 300,
