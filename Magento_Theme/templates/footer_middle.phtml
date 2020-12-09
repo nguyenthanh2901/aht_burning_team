@@ -9,8 +9,14 @@
     <?php endfor; ?>
 </div>
 <div class="footer-middle-mobile-container">
-    <?php for ($i = 1; $i <= 3; $i++) : ?>
-        <div class="footer-middle-links-<?= $i ?>">
+    <div class="footer-middle-links-1 footer-middle-links-item">
+        <?= $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId("footer-middle-links-mobile-1")
+            ->toHtml() ?>
+    </div>
+    <?php for ($i = 2; $i <= 3; $i++) : ?>
+        <div class="footer-middle-links-<?= $i ?> footer-middle-links-item">
             <?= $block->getLayout()
                 ->createBlock('Magento\Cms\Block\Block')
                 ->setBlockId("footer-middle-links-$i")
@@ -21,15 +27,22 @@
 
 <script>
     require(['jquery', 'accordion'], function($) {
-        for (let i = 1; i <= 3; i++) {
-            let dataCollapse = $('.footer-middle-links-' + i)
-            dataCollapse.attr('data-role', 'collapsible')
-            let titleTrigger = $('.footer-middle-links-' + i + ' >:first-child');
-            titleTrigger.attr('data-role', 'trigger');
-            let content = $('.footer-middle-links-' + i + '>:last-child');
-            content.attr('data-role', 'content');
-        }
-
+        let dataCollapse = $('.footer-middle-links-item');
+        dataCollapse.attr('data-role', 'collapsible')
+        let titleTrigger = $('.footer-middle-links-item >:first-child');
+        titleTrigger.attr('data-role', 'trigger');
+        let active = $('.footer-middle-links-1.footer-middle-links-item >:first-child');
+        active.className = 'close';
+        titleTrigger.on("click", function(e) {
+            if (e.target.nextElementSibling.style.display === 'none') {
+                // $('')
+                e.target.className = "close"
+            } else {
+                e.target.className = ""
+            }
+        })
+        let content = $('.footer-middle-links-item >:last-child');
+        content.attr('data-role', 'content');
         $(".footer-middle-mobile-container").accordion();
     })
 </script>
