@@ -1,66 +1,77 @@
 <div class="row tiles">
-    <?php for ($i=1; $i <=2 ; $i++):?>
-        <div class="col">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_img_$i")->toHtml(); ?>
-            <div class="col-content">
-                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_title_$i")->toHtml(); ?>
-                
-            </div>
-        </div>
-    <?php endfor;?>
+  <?php for ($i = 1; $i <= 2; $i++) : ?>
+    <div class="col">
+      <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_img_$i")->toHtml(); ?>
+      <div class="col-content">
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_top_title_$i")->toHtml(); ?>
+
+      </div>
+    </div>
+  <?php endfor; ?>
 </div>
 <div class="reason-carosel">
-    <?php for ($i=1; $i <=3 ; $i++): ?>
-        <div class="carosel-item">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("reason_carosel_text_$i")->toHtml(); ?>
-        </div>
-       <?php endfor; ?>
+  <?php for ($i = 1; $i <= 3; $i++) : ?>
+    <div class="carosel-item">
+      <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("reason_carosel_text_$i")->toHtml(); ?>
+    </div>
+  <?php endfor; ?>
 
 </div>
 <div class="row">
-<?php for ($i=1; $i <=3 ; $i++): ?>
+  <?php for ($i = 1; $i <= 3; $i++) : ?>
     <div class="col banner-2">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_img_$i")->toHtml(); ?>
-        <div class="collection-content">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_text_$i")->toHtml(); ?>
-            
-        </div>
+      <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_img_$i")->toHtml(); ?>
+      <div class="collection-content">
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_bottom_text_$i")->toHtml(); ?>
+
+      </div>
     </div>
-<?php endfor;?>
+  <?php endfor; ?>
 </div>
 <div class="row banner-tiles2">
-        <div class="col">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_1")->toHtml(); ?>
-            <div class="col-content">
-                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_title_1")->toHtml(); ?>
-            </div>
-        </div>
-        <div class="col">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_2")->toHtml(); ?>
-        </div>
+  <div class="col">
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_1")->toHtml(); ?>
+    <div class="col-content">
+      <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_title_1")->toHtml(); ?>
+    </div>
+  </div>
+  <div class="col">
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_2")->toHtml(); ?>
+  </div>
 </div>
 <script>
-    require([
+  require([
     'jquery',
     'slick'
   ], function($) {
     $(document).ready(function() {
-      $(".reason-carosel").slick({
+      $('.reason-carosel').slick({
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         responsive: [{
-            breakpoint: 768,
+            breakpoint: 1024,
             settings: {
-              slidesToShow: 1
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           },
           {
             breakpoint: 480,
             settings: {
-              slidesToShow: 1
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           }
         ]
