@@ -3,10 +3,48 @@
 
 & when (@media-common =true) {
 
+    //default
+    body {
+        .lib-css(font-family, @font-roboto-regular);
+        .lib-css(font-size, @font-size13);
+        .lib-css(line-height, @size-20px);
+        .lib-css(color, @color-333);
+    }
+
+    h1 {
+        .lib-css(font-family, @font-lora-regular);
+        .lib-css(font-size, @font-size32);
+    }
+
+    h2 {
+        .lib-css(font-family, @font-lora-regular);
+        .lib-css(font-size, @font-size24);
+    }
+
+    h3 {
+        .lib-css(font-family, @font-lora-regular);
+        .lib-css(font-size, @font-size18);
+    }
+
+    h4 {
+        .lib-css(font-family, @font-roboto-bold);
+        .lib-css(font-size, @font-size15);
+    }
+
+    a {
+        .lib-css(font-family, @font-roboto-regular);
+        .lib-css(color, @color-333);
+        .lib-css(cursor, pointer);
+
+        &:hover {
+            .lib-css(color, @color-777);
+        }
+    }
+
     //default button
     button {
-        border-radius: 0;
-        text-transform: uppercase;
+        .lib-css(border-radius, 0);
+        .lib-css(text-transform, uppercase);
         .lib-button(@_button-background: @color-green-default,
             @_button-background-active: @color-green-standard,
             @_button-font-family: @font-roboto-bold,
@@ -16,7 +54,6 @@
             @_button-border: @size-1px solid @color-green-default,
             @_button-font-size: @font-size13,
             @_button-background-hover: @color-green-standard);
-
 
         &.active {
             background: @color-green-standard;
@@ -30,7 +67,6 @@
         //standard button
         &.standard-button,
         &.action.tocart.primary {
-
             .lib-button(@_button-background: @color-white,
                 @_button-color: @color-black,
                 @_button-border: @size-1px solid @color-black,
@@ -50,6 +86,26 @@
                 @_button-color-hover: @color-black,
                 @_button-border: @size-1px solid @color-white)
         }
+        
+        //adjustable button
+        &.button-adjust {
+            .lib-button(@_button-background: @color-white,
+                @_button-color: @color-a9,
+                @_button-color-hover: @color-a9,
+                @_button-background-hover: @color-f8,
+                @_button-font-family: @font-roboto-bold,
+                @_button-color-active: @color-a9,
+                @_button-background-active: @color-f8);
+
+            &.active {
+                background: @color-f8;
+            }
+
+            &:visited {
+                background: @color-f8;
+                color: @color-a9;
+            }
+        }
     }
 
     // input field
@@ -57,15 +113,87 @@
     select,
     textarea {
         .lib-form-element-color(@_background: @color-white,
-            @_border-color: #ddd,
+            @_border-color: @color-ddd,
             @_color: @color-black,
             @_focus-color: @color-black,
-            @_focus-border-color: #ddd);
+            @_focus-border-color: @color-ddd);
     }
 
-    input[type='checkbox'],
-    input[type="radio"] {
+    input{
+        &:not([disabled]):focus {
+            box-shadow: none;
+        }
+        &.input-adjust {
+            margin: 0px -5px;
+            padding-bottom: 3px;
+            max-width: 40px;
+            max-height: 40px;
+            text-align: center;
+            color: @color-333;
+        }
+    }
+    //input checkbox
+    input[type='checkbox']{
         visibility: hidden;
+        &:checked+label:before {
+            background: white;
+            color: @color-black;
+            content: "";
+            text-align: center;
+            font-size: @size-20px;
+        }
+        &:checked+label:after {
+            content: "";
+            width: 5px;
+            height: 8px;
+            border-width: 0 2px 2px 0;
+            border-style: solid;
+            border-color: #323234;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 0;
+            margin: 4px;
+            margin-left: 8px;
+        }
+        &+label:before {
+            border: @size-1px solid @color-ddd;
+            content: "";
+            display: inline-block;
+            margin: 0 10px -6px 0;
+            padding: 0;
+            vertical-align: top;
+            width: @size-20px;
+            height: @size-20px;
+        }
+    }
+
+    //input radio
+    input[type="radio"]{
+        visibility: hidden;
+        &:checked+label:after {
+            background: @color-333;
+            color: @color-white;
+            content: "";
+            text-align: center;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            left: 0;
+            margin: 7px;
+            border-radius: 50%;
+        }
+        &+label:before {
+            border-radius: 50%;
+            vertical-align: baseline;
+            border: @size-1px solid @color-ddd;
+            content: "";
+            display: inline-block;
+            margin: 0 10px -6px 0;
+            padding: 0;
+            vertical-align: top;
+            width: @size-20px;
+            height: @size-20px;
+        }
     }
 
     label {
@@ -73,120 +201,23 @@
         position: relative;
     }
 
-    input[type="checkbox"]+label:before,
-    input[type="radio"]+label:before {
-        border: @size-1px solid #ddd;
-        content: "";
-        display: inline-block;
-        margin: 0 10px -6px 0;
-        padding: 0;
-        vertical-align: top;
-        width: @size-20px;
-        height: @size-20px;
-    }
-
-    input[type="radio"]:checked+label:after {
-        background: @color-333;
-        color: @color-white;
-        content: "";
-        text-align: center;
-    }
-
-    input[type="checkbox"]:checked+label:before {
-        background: white;
-        color: @color-black;
-        content: "";
-        text-align: center;
-        font-size: @size-20px;
-    }
-
-    input[type="radio"]+label:before {
-        border-radius: 50%;
-        vertical-align: baseline;
-    }
-
-    input[type="radio"]:checked+label:after {
-        content: "";
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        left: 0;
-        margin: 7px;
-        border-radius: 50%;
-    }
-
-    input[type="checkbox"]:checked+label:after {
-        content: "";
-        width: 5px;
-        height: 8px;
-        border-width: 0 2px 2px 0;
-        border-style: solid;
-        border-color: #323234;
-        transform: rotate(45deg);
-        position: absolute;
-        left: 0;
-        margin: 4px;
-        margin-left: 8px;
-    }
-
-    h1 {
-        font-family: @font-lora-regular;
-        font-size: @font-size32;
-    }
-
-    h2 {
-        font-family: @font-lora-regular;
-        font-size: @font-size24;
-    }
-
-    h3 {
-        font-family: @font-lora-regular;
-        font-size: @font-size18;
-    }
-
-    h4 {
-        font-family: @font-roboto-bold;
-        font-size: @font-size15;
-    }
-
-    a {
-        font-family: @font-roboto-regular;
-        color: @color-333;
-        cursor: pointer;
-
-        &:hover {
-            color: @color-777;
-        }
-    }
-
-    body {
-        font-family: @font-roboto-regular;
-        font-size: @font-size13;
-        line-height: @size-20px;
-        color: @color-333;
-    }
-
+    //input text
     input[type=text],
     select {
         box-sizing: border-box;
         font-size: @font-size13;
-        line-height: 30px;
+        line-height: @size-30px;
         color: @color-333;
         font-family: @font-roboto-regular;
         text-align: left;
         padding: 0 @font-size13;
-
+        padding: 0 9px;
+        &:not([disabled]):focus {
+            box-shadow: none;
+        }
         &:focus {
             box-shadow: none;
         }
-    }
-
-    select:not([disabled]):focus {
-        box-shadow: none;
-    }
-
-    select {
-        padding: 0 9px;
     }
 
     input.mage-error,
@@ -199,6 +230,7 @@
         color: @color-red9;
     }
 
+    // Alert
     .message-success {
         .lib-message(success);
         .lib-css(background, @color-white);
@@ -254,5 +286,4 @@
             .lib-css(border, @size-1px solid @color-d1);
         }
     }
-
 }
