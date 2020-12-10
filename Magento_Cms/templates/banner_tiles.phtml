@@ -29,7 +29,7 @@
   <?php endfor; ?>
 </div>
 <div class="row banner-tiles2">
-  <div class="col">
+  <div class="col desktop">
     <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_1")->toHtml(); ?>
     <div class="col-content">
       <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_title_1")->toHtml(); ?>
@@ -39,6 +39,7 @@
     <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("tiles_bottom_img_2")->toHtml(); ?>
   </div>
 </div>
+
 <script>
   require([
     'jquery',
@@ -49,8 +50,8 @@
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         responsive: [{
             breakpoint: 1024,
             settings: {
