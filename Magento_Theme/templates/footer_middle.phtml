@@ -1,48 +1,54 @@
-<div class="footer-middle-desktop-container">
-    <?php for ($i = 1; $i <= 3; $i++) : ?>
-        <div class="footer-middle-links-<?= $i ?>">
-            <?= $block->getLayout()
-                ->createBlock('Magento\Cms\Block\Block')
-                ->setBlockId("footer-middle-links-$i")
-                ->toHtml() ?>
-        </div>
-    <?php endfor; ?>
-</div>
-<div class="footer-middle-mobile-container">
-    <div class="footer-middle-links-1 footer-middle-links-item">
-        <?= $block->getLayout()
-            ->createBlock('Magento\Cms\Block\Block')
-            ->setBlockId("footer-middle-links-mobile-1")
-            ->toHtml() ?>
-    </div>
-    <?php for ($i = 2; $i <= 3; $i++) : ?>
-        <div class="footer-middle-links-<?= $i ?> footer-middle-links-item">
-            <?= $block->getLayout()
-                ->createBlock('Magento\Cms\Block\Block')
-                ->setBlockId("footer-middle-links-$i")
-                ->toHtml() ?>
-        </div>
-    <?php endfor; ?>
-</div>
+        <!-- <?= $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId("footer-middle-links-1-widget")
+                    ->toHtml() ?> -->
 
-<script>
-    require(['jquery', 'accordion'], function($) {
-        let dataCollapse = $('.footer-middle-links-item');
-        dataCollapse.attr('data-role', 'collapsible')
-        let titleTrigger = $('.footer-middle-links-item >:first-child');
-        titleTrigger.attr('data-role', 'trigger');
-        let active = $('.footer-middle-links-1.footer-middle-links-item >:first-child');
-        active.className = 'close';
-        titleTrigger.on("click", function(e) {
-            if (e.target.nextElementSibling.style.display === 'none') {
-                // $('')
-                e.target.className = "close"
-            } else {
-                e.target.className = ""
-            }
-        })
-        let content = $('.footer-middle-links-item >:last-child');
-        content.attr('data-role', 'content');
-        $(".footer-middle-mobile-container").accordion();
-    })
-</script>
+
+        <div class="footer-middle-desktop-container">
+            <?php for ($i = 1; $i <= 3; $i++) : ?>
+                <div class="footer-middle-links-<?= $i ?> footer-middle-item">
+                    <?= $block->getLayout()
+                        ->createBlock('Magento\Cms\Block\Block')
+                        ->setBlockId("footer-middle-links-$i")
+                        ->toHtml() ?>
+                </div>
+            <?php endfor; ?>
+        </div>
+        <div class="footer-middle-mobile-container">
+            <div class="footer-middle-links-1 footer-middle-links-item">
+                <?= $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId("footer-middle-links-mobile-1")
+                    ->toHtml() ?>
+            </div>
+            <?php for ($i = 2; $i <= 3; $i++) : ?>
+                <div class="footer-middle-links-<?= $i ?> footer-middle-links-item">
+                    <?= $block->getLayout()
+                        ->createBlock('Magento\Cms\Block\Block')
+                        ->setBlockId("footer-middle-links-$i")
+                        ->toHtml() ?>
+                </div>
+            <?php endfor; ?>
+        </div>
+
+        <script>
+            require(['jquery', 'accordion'], function($) {
+                let dataCollapse = $('.footer-middle-links-item');
+                dataCollapse.attr('data-role', 'collapsible')
+                let titleTrigger = $('.footer-middle-links-item >:first-child');
+                titleTrigger.attr('data-role', 'trigger');
+                let active = $('.footer-middle-links-1.footer-middle-links-item >:first-child');
+                active.className = 'close';
+                titleTrigger.on("click", function(e) {
+                    if (e.target.nextElementSibling.style.display === 'none') {
+                        // $('')
+                        e.target.className = "close"
+                    } else {
+                        e.target.className = ""
+                    }
+                })
+                let content = $('.footer-middle-links-item >:last-child');
+                content.attr('data-role', 'content');
+                $(".footer-middle-mobile-container").accordion();
+            })
+        </script>

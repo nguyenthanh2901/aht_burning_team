@@ -1,0 +1,345 @@
+.a() {
+    font-size: @size-13;
+    color: @color-black3;
+    text-decoration: underline;
+}
+
+.blogBorder() {
+    text-transform: capitalize;
+    font-size: @size-32;
+    text-align: center;
+}
+
+& when (@media-common =true) {
+    // button {
+    //     border-radius: 0;
+    // }
+
+
+
+    .page-main {
+        margin: 0 10px;
+    }
+
+    button {
+        &.standard-button-black {
+            background: @color-black2d;
+            padding: 15px 30px;
+            font-size: @size-15;
+            font-family: @font-roboto-bold;
+        }
+
+    }
+
+    .button-icon {
+        padding-left: 5px;
+        font-size: @size-20;
+    }
+
+    //BANNER
+    .banner {
+        position: relative;
+
+        .banner_content {
+            position: absolute;
+            top: 50%;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+
+            .title {
+                font-family: @font-market-re;
+                font-size: @size-53;
+                font-weight: bold;
+            }
+
+            .summary {
+                margin: 1.2em 0 1em;
+                font-size: @size-20;
+                letter-spacing: 1px;
+                word-spacing: 5px;
+                color: @color-whitef;
+                font-family: @font-lora-re;
+
+            }
+
+            a {
+                font-family: @font-openSans-bold;
+            }
+
+        }
+    }
+
+    .reason-carosel {
+        text-transform: uppercase;
+        text-align: center;
+        background: @color-black2d;
+        color: @color-white;
+        padding: 9px;
+        font-size: @size-13;
+
+        p {
+            border-right: 1px solid @color-whitee;
+
+            a {
+                color: @color-whitef;
+                margin-left: -1.2em;
+                word-spacing: 2px;
+            }
+
+        }
+    }
+
+    .col-content {
+        .title {
+            font-family: @font-lora-bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .banner-2 {
+        background: @color-whitee;
+
+        .collection-content {
+            text-align: Center;
+            padding: 27px 25px 36px;
+
+            .title {
+                color: @color-black2;
+                text-transform: capitalize;
+            }
+
+            .summary {
+                padding: 10px 2px 16px;
+                font-size: @size-14;
+            }
+
+            button {
+                &.standard-button-black {
+                    background: @color-whitee;
+                    border: 1px solid @color-black;
+                    color: @color-black;
+                    font-size: @size-13;
+                    padding: 9px 22px;
+                }
+            }
+        }
+    }
+
+    .banner-tiles2 {
+        .col-content {
+            .title {
+                font-size: @size-52;
+                margin-bottom: 42px;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 14px 28px;
+                    font-size: @size-13;
+                }
+            }
+        }
+    }
+
+    //FURNITURE BLOG
+    .our-blog {
+        position: relative;
+        font-family: @font-lora-re;
+
+        .blog-border {
+            .blogBorder();
+
+            &:before {
+                content: '';
+                width: 40%;
+                border-bottom: 1px solid @color-grayc;
+                top: 13px;
+                position: absolute;
+                left: 0;
+            }
+
+            &:after {
+                content: "";
+                width: 40%;
+                position: absolute;
+                right: 0;
+                border-bottom: 1px solid @color-grayc;
+                top: 13px;
+            }
+        }
+
+        .blog-main {
+            margin-top: 38px;
+
+            .blog-content {
+                margin: 15px 0;
+
+                .title {
+                    color: @color-black2;
+                }
+
+                .summary {
+                    color: @color-black3;
+                    font-family: @font-roboto-re;
+                    padding: 12px 0 19px;
+                }
+
+                a {
+                    .a();
+                }
+            }
+        }
+    }
+
+
+    //TESTIMONIAL
+    .testimonial-blog {
+        margin-top: 30px;
+        position: relative;
+
+        text-align: center;
+
+        .blog-border {
+            .blogBorder();
+
+            &:before {
+                content: '';
+                width: 34%;
+                position: absolute;
+                top: 14px;
+                border-bottom: 1px solid @color-grayc;
+                left: 0;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                width: 34%;
+                top: 14px;
+                border-bottom: 1px solid @color-grayc;
+            }
+        }
+
+        .testi-main {
+            margin-top: 24px;
+            margin-bottom: 13px;
+
+            .testimonial {
+                font-family: @font-roboto-re;
+                font-size: @size-13;
+                text-align: left;
+                padding: 35px 38px;
+                margin: 10px;
+                border: 1px solid #ccc;
+
+                a {
+                    .a();
+                }
+
+                .testi-content {
+                    margin-top: 23px;
+                    line-height: 1.2;
+                }
+
+                .testi-name {
+                    font-weight: 700;
+                }
+            }
+
+            button {
+                &.standard-button-black {
+                    font-size: @size-13;
+                    color: @color-black2d;
+                }
+            }
+        }
+
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .tiles {
+        margin-bottom: 13px;
+
+        .col-content {
+            .title {
+                font-size: @size-42;
+                margin-bottom: 30px;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    .our-blog .row {
+        flex-wrap: wrap;
+
+        .col-3 {
+            width: 100%;
+            max-width: 33.333%;
+            flex: 0 0 33.3333%;
+        }
+
+        .col {
+            max-width: 50%;
+            width: 100%;
+            margin: 0;
+        }
+
+        .furniture-blog {
+            padding: 0 10px;
+            margin-bottom: 28px;
+
+            .blog-content {
+                .title {
+                    text-align: left;
+                    font-size: @size-18;
+                }
+
+                .summary {
+                    font-size: @size-13;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+
+    .banner-top {
+        overflow: hidden;
+    }
+
+    .banner {
+        .banner_content {
+            .title {
+                font-size: @size-200;
+                margin-left: -23px;
+                font-weight: bold;
+                margin-top: 25px;
+                line-height: 0.75;
+            }
+
+            .summary {
+                font-size: @size-32;
+                line-height: 1;
+                margin-left: 7px;
+            }
+        }
+    }
+
+    .tiles_content {
+        .title {
+            font-size: @size-42;
+        }
+
+    }
+
+}
