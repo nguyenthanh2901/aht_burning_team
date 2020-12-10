@@ -116,7 +116,6 @@
 
         .collection-content {
             text-align: Center;
-            padding: 27px 25px 36px;
 
             .title {
                 color: @color-black2;
@@ -343,9 +342,7 @@
             }
         }
     }
-    .testimonial-blog button.standard-button-black {
-        width:100%;
-    }
+    
     .testimonial-blog{
         margin-top:9px;
         .blog-border{
@@ -367,7 +364,11 @@
                 margin: 10px 0 -5px;
             }
         }
-       
+       button{
+        &.standard-button {
+            width:100%;
+        }
+       }
     }
 }
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
@@ -406,7 +407,11 @@
             border-right: 1px solid @color-whitee;
         }
     }
-    
+    .banner-2 {
+        .collection-content {
+            padding: 27px 25px 36px;
+        }
+    }
     .our-blog {
         .row {
             flex-wrap: wrap;
