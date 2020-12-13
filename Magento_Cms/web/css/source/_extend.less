@@ -27,7 +27,6 @@
         }
 
         .block-products-list {
-
             .slick-prev,
             .slick-next {
                 border-radius: 50%;
@@ -110,6 +109,21 @@
                 background-color: @color-gray55;
                 z-index: -9;
                 position: relative;
+            }
+        }
+
+        .button-view-our {
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+
+            p {
+                width: 100%;
+                margin: 0 auto;
+                border: 2px solid @color-black;
+                a {
+                    font-weight: 700;
+                }
             }
         }
     }
@@ -404,54 +418,79 @@
                 }
             }
         }
+
         .content {
-            margin-top: 17px;
+            margin-top: 16px;
             .slick-slide {
-                p {
-                    margin: 0;
+                &.slick-current {
+                    + .slick-active {
+                        div {
+                            img {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
                 }
 
-                &.slick-active {
-                    div {
-                        width: 175px;
+                div {
+                    width: 175px;
+                    &:nth-child(2) {
+                        img {
+                            margin-top: 3px;
+                        }
+                    }
+                    p {
+                        margin: 0;
                     }
                 }
             }
 
             .slick-dots {
+                bottom: -30px;
+                left: 1px;
+                li {
+                    margin:  -3px;
+                    button {
+                        padding: 0;
+                        &::before {
+                            font-size: 30px;
+                            color: @color-gray55;
+                        }
+                    }
+                    &.slick-active {
+                        button {
+                            &::before {
+                                top: 0px;
+                                left: -1px;
+                            }
+                        }
+                    }
+                }
                 .slick-active {
+                    li {
+                        &::before {
+                            color: @color-gray_light;
+                        }
+                    }
                     button {
                         &::before {
                             font-size: 30px;
                             top: -4px;
                             left: 2px;
-                            color: @color-gray_light;
+                            color: @color-lighter-grayish;
                         }
                     }
                 }
             }
+        }
 
-            .slick-current {
-                div:nth-child(2) {
-                    img {
-                        margin-top: 3px;
-                    }
-                }
-                
-                +.slick-active {
-                    >:first-child {
-                        img {
-                            margin-left: 5px;
-                        }
-                    }
-
-                    >:last-child {
-                        img {
-                            margin-left: 5px;
-                            margin-top: 3px;
-                        }
-                    }
-                }
+        .button-view-our {
+            margin-top: 43px;
+            width: 99%;
+            p {
+                height: 30px;
+                line-height: 31px;
+                margin-left: -2px;
             }
         }
     }
@@ -506,9 +545,24 @@
         }
 
         .block-products-list {
-            
             .block-content {
                 margin-top: -4px;
+                .product-items {
+                    .product-item {
+                        .product-item-info {
+                            position: relative;
+                            &::after {
+                                background-image: url(https://www.burninglog.com.au/static/version1607559757/frontend/BurningLog/default/en_AU/images/border-category.png);
+                                position: absolute;
+                                content: "";
+                                width: 1px;
+                                height: 300px;
+                                top: 0;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
             }
 
             .actions-secondary {
@@ -607,13 +661,6 @@
                             .old-price {
                                 margin-right: 9px;
                             }
-
-                            // .special-price {
-                            //     order: 3;
-                            //     .price {
-                            //         color: @color-red9;
-                            //     }
-                            // }
     
                             .price {
                                 font-size: 20px;
@@ -638,7 +685,7 @@
     }
 
     .section-new-seller {
-        margin-top: 2336px;
+        margin-top: 2332px;
         .title {
             &::after {
                 top: -11px;
@@ -745,18 +792,11 @@
         }
 
         .button-view-our {
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            text-transform: uppercase;
-            margin-top: -12px;
-
+            margin-top: -20px;
             p {
-                a {
-                    border: 1px solid @color-black;
-                    padding: 10px 19px;
-                    font-weight: 700;
-                }
+                width: 14%;
+                height: 32px;
+                line-height: 32px;
             }
         }
     }
