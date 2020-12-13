@@ -100,6 +100,19 @@
             }
         }
     }
+
+    .section-outdoor-inspiration {
+        .title {
+            &::after {
+                content: "";
+                height: 1px;
+                display: block;
+                background-color: @color-gray55;
+                z-index: -9;
+                position: relative;
+            }
+        }
+    }
 }
 
 //
@@ -360,10 +373,23 @@
         margin-top: -40px;
         .title {
             text-align: center;
+            &::after {
+                content: "";
+                height: 1px;
+                display: block;
+                background-color: @color-gray55;
+                z-index: -9;
+                position: relative;
+                top: -70px;
+            }
             p {
                 &:nth-child(1) {
                     font-size: 26px;
                     margin-left: -1px;
+                    background-color: @color-white;
+                    width: fit-content;
+                    margin: 0 auto;
+                    padding: 0 10px;
                 }
 
                 &:nth-child(2) {
@@ -388,6 +414,19 @@
                 &.slick-active {
                     div {
                         width: 175px;
+                    }
+                }
+            }
+
+            .slick-dots {
+                .slick-active {
+                    button {
+                        &::before {
+                            font-size: 30px;
+                            top: -4px;
+                            left: 2px;
+                            color: @color-gray_light;
+                        }
                     }
                 }
             }
@@ -620,6 +659,104 @@
             
             p {
                 padding-left: 29px;
+            }
+        }
+    }
+
+    .section-outdoor-inspiration {
+        .title {
+            p {
+                &:nth-child(1) {
+                    display: none;
+                }
+
+                &:nth-child(2) {
+                    margin: 0 auto;
+                    width: fit-content;
+                    font-size: 37px;
+                    letter-spacing: 0.3px;
+                    margin-top: -16px;
+                    background-color: @color-white;
+                    padding: 0px 28px;
+                }
+
+                &:nth-child(3) {
+                    text-align: center;
+                    margin-top: 20px;
+                    font-size: 14px;
+                    letter-spacing: 0.1px;
+                }
+            }
+
+            &::after {
+                top: -57px;
+            }
+            
+        }
+
+        .content {
+            margin-top: 13px;
+            .slick-list {
+                .slick-active {
+                    margin-left: 4px;
+                }
+
+                .slick-current {
+                    margin-left: 0px;
+                }
+            }
+
+            .list-items {
+                height: 270px;
+
+                .slick-prev,
+                .slick-next {
+                    border-radius: 50%;
+                    border: 1px solid @color-gray52;
+                    width: 42px;
+                    height: 42px;
+                    z-index: 1;
+                    background-color: @color-white;
+                    &::before {
+                        color: @color-black;
+                        margin-left: 13px;
+                        font-size: 2.5em;
+                        position: relative;
+                        top: -4px;
+                    }
+                }
+
+                .slick-prev{
+                    left: 0px;
+                    top: 115px;
+                    &::before {
+                        content: "\2039";
+                    }
+                }
+    
+                .slick-next {
+                    right: 0px;
+                    top: 115px;
+                    &::before {
+                        content: "\203A";
+                    }
+                }
+            }
+        }
+
+        .button-view-our {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-top: -12px;
+
+            p {
+                a {
+                    border: 1px solid @color-black;
+                    padding: 10px 19px;
+                    font-weight: 700;
+                }
             }
         }
     }
