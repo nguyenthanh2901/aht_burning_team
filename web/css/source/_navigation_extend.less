@@ -7,11 +7,19 @@
 //  Variables
 //  _____________________________________________
 
-@active-nav-indent: 54px;
-
 //
 //  Mobile
 //  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__380) {
+    .navigation .level0 {
+        font-size: 6vw;
+    }
+
+    .navigation .level0>.level-top {
+        padding: 0
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {}
 

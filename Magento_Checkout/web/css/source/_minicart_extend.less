@@ -16,18 +16,18 @@
                     top: -5px;
                     font-size: 11px;
                     right: -7px;
-                    line-height: 20px;
+                    line-height: @size-20px;
                     position: absolute;
-                    height: 18px;
+                    height: @font-size18;
                     border-radius: 50%;
-                    width: 18px;
+                    width: @font-size18;
                     padding: 0;
-                    font-family: "Roboto-Regular";
+                    font-family: @font-roboto-regular;
                     margin-top: 0;
                 }
 
                 &:before {
-                    line-height: 13px;
+                    line-height: @font-size13;
                     content: url('../images/ic_shopping_cart_black_24px.png')
                 }
             }
@@ -85,8 +85,8 @@
                 top: 3px;
                 color: #d40000;
                 overflow: visible;
-                font-family: "Roboto-Medium";
-                font-size: 13px;
+                font-family: @font-roboto-medium;
+                font-size: @font-size13;
             }
 
             .counter.qty {
@@ -95,18 +95,15 @@
                 font-size: 12px;
                 background: none;
                 position: absolute;
-
                 color: white;
-
-
-                line-height: 18px;
-                background: green;
-                height: 18px;
+                line-height: @font-size18;
+                background: #23ad1c;
+                height: @font-size18;
                 border-radius: 50%;
                 margin-top: 0;
-                width: 18px;
+                width: @font-size18;
                 padding: 0;
-                font-family: "Roboto-Medium";
+                font-family: @font-roboto-medium;
             }
         }
     }
@@ -127,16 +124,16 @@
 
             .counter.qty {
                 border-radius: 2px;
-                min-width: 18px;
+                min-width: @font-size18;
                 position: relative;
                 top: 0;
                 right: 0;
                 white-space: normal;
-                font-size: 13px;
-                line-height: 20px;
+                font-size: @font-size13;
+                line-height: @size-20px;
                 overflow: hidden;
                 width: 100%;
-                font-family: 'Roboto-Medium';
+                font-family: @font-roboto-medium;
                 display: inline-block;
                 background: #fff;
                 color: #d40000;
