@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <referenceBlock name="product.attributes" remove="true"/>
+        <referenceContainer name="content" > 
+            <referenceBlock name="product.info.details">
+                
+                <referenceBlock name="product.info.description">
+                    <argument name="title" translate="true" xsi:type="string">Description</argument>
+                </referenceBlock>
+                <block class="Magento\Framework\View\Element\Template" name="detail_tab.return" template="Magento_Catalog::detail_tab.phtml" group="detailed_info"> 
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Care &#38; Warranty</argument>
+                        <argument name="sort_order" xsi:type="string">20</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Framework\View\Element\Template" name="detail_tab2:return" template="Magento_Catalog::detail_tab_block2.phtml" group="detailed_info"> 
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Shipping &#38; Delivery</argument>
+                        <argument name="sort_order" xsi:type="string">30</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attr" as="addition" template="Magento_Catalog::detail_tab_attr.phtml" group="detailed_info">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">Installation Requirements</argument>
+                        <argument name="sort_order" xsi:type="string">40</argument>
+                    </arguments>
+                </block>
+                
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
