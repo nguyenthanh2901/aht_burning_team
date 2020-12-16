@@ -100,5 +100,47 @@
                 }
             }
         }
+
+        & .box-tocart-custom {
+            margin-top: 92px;
+            & div.fieldset {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & div.qty {
+                    margin-bottom: 0px;
+                    & .control {
+                        button,
+                        input {
+                            width: 42px;
+                            height: 40px;
+                        }
+                    }
+                }
+
+                & div.actions {
+                    width: 61%;
+                    padding-top: 0px;
+                }
+            }
+        }
+    }
+    .choose_your_colour {
+        margin-top: 30px;
+
+        & .swatch-option.image {
+            width: 85px !important;
+            height: 64px !important;
+            border: none;
+            // &:nth-child(1) {
+            //     border: 1px solid #ddd;
+            // }
+
+            &.selected {
+                border: 1px solid #ddd !important;
+                outline: unset !important;
+            }
+        }
     }
 }
