@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+    $_product = $block->getProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()) :?>
+    <div class="product info detailed ">
+        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+            <?php if(!empty($_product->getDescription())) :?>
+                <div class="data item title"
+                    data-role="collapsible" id="tab-label-desc">
+                    <a class="data switch"
+                    tabindex="-1"
+                    data-toggle="trigger"
+                    href="#desc"
+                    id="tab-label-desc-title">
+                    Description
+                    </a>
+                </div>
+                <div class="data item content"
+                    aria-labelledby="tab-label-desc-title" id="desc" data-role="content">
+                    <?php echo $_product->getDescription() ?>
+                </div>
+            <?php endif;?>
+            <?php foreach ($_additional as $_data) :?>
+                <div class="data item title"
+                    data-role="collapsible" id="tab-label-<?= $_data['code']; ?>">
+                    <a class="data switch"
+                    tabindex="-1"
+                    data-toggle="trigger"
+                    href="#<?= $_data['code']; ?>"
+                    id="tab-label-<?= $_data['code']; ?>-title">
+                    <?= $block->escapeHtml($_data['label']) ?>
+                    </a>
+                </div>
+                <div class="data item content"
+                    aria-labelledby="tab-label-<?= $_data['code']; ?>-title" id="<?= $_data['code'] ?>" data-role="content">
+                    <?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?>
+                </div>
+            <?php endforeach;?>
+        </div>
+    </div>
+<?php endif;?>
