@@ -10,7 +10,7 @@
 <span class="price-container <?= $block->escapeHtmlAttr($block->getAdjustmentCssClasses()) ?>"
         <?= $block->getSchema() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : '' ?>>
     <?php if ($block->getDisplayLabel()) :?>
-        <!-- <span class="price-label"><?= $block->escapeHtml($block->getDisplayLabel()) ?></span> -->
+        <span class="price-label"><?= $block->escapeHtml($block->getDisplayLabel()) ?></span>
     <?php endif; ?>
     <span <?php if ($block->getPriceId()) :?> id="<?= $block->escapeHtmlAttr($block->getPriceId()) ?>"<?php endif;?>
         <?= ($block->getPriceDisplayLabel()) ? 'data-label="' . $block->escapeHtmlAttr($block->getPriceDisplayLabel() . $block->getPriceDisplayInclExclTaxes()) . '"' : '' ?>
