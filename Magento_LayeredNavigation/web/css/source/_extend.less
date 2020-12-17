@@ -1,0 +1,74 @@
+// & when (@media-common = true){
+//     .filter-options{
+
+//     }
+// }
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .block-subtitle {
+        display: none;
+    }
+
+    .filter-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .block.filter {
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+
+            .filter-options-title {
+                width: 160px;
+                height: 44px;
+                background-color: #ffffff;
+                border: 1px solid #dddddd;
+                margin-right: 10px;
+                box-sizing: border-box;
+                line-height: 43px;
+                font-size: 13px;
+                line-height: 42px;
+                color: #222222;
+                font-family: "Roboto-Bold";
+                position: relative;
+                padding-left: 16px;
+                margin-bottom: 0;
+
+                &:after {
+                    content: '\271A';
+                    position: absolute;
+                    top: 1px;
+                    right: 17px;
+                    color: #999999;
+                }
+            }
+
+            .filter-options-content {
+                border: 1px solid #dddddd;
+                box-sizing: border-box;
+                border-top: none;
+                position: absolute;
+                padding-top: 13px;
+                padding-left: 19px;
+                width: 94%;
+                padding-bottom: 14px;
+                margin-bottom: 0;
+                z-index: 5;
+
+                .item {
+                    font-size: 13px;
+                    line-height: 26px;
+                }
+            }
+        }
+
+        .filter-options-item.active .filter-options-title:after {
+            content: '\2014';
+        }
+
+        .filter-options-item {
+            position: relative;
+        }
+    }
+}

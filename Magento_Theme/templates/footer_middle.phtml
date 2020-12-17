@@ -17,8 +17,8 @@
     <?php endfor; ?>
 </div>
 <div class="footer-middle-mobile-container">
-    <div class="footer-middle-links-1 footer-middle-links-item">
-        <div data-role='trigger' class="footer-middle-header trigger">
+    <div class="footer-middle-links-1 footer-middle-links-item" data-role='collapsible'>
+        <div data-role='title' class="footer-middle-header trigger">
             <?= $block->getLayout()
                 ->createBlock('Magento\Cms\Block\Block')
                 ->setBlockId("footer-middle-1-header")
@@ -33,7 +33,7 @@
     </div>
     <?php for ($i = 2; $i <= 3; $i++) : ?>
         <div class="footer-middle-links-<?= $i ?> footer-middle-links-item" data-role='collapsible'>
-            <div data-role='trigger' class="footer-middle-header trigger">
+            <div data-role='title' class="footer-middle-header trigger">
                 <?= $block->getLayout()
                     ->createBlock('Magento\Cms\Block\Block')
                     ->setBlockId("footer-middle-$i-header")
@@ -51,6 +51,9 @@
 
 <script>
     require(['jquery', 'accordion'], function($) {
-        $(".footer-middle-mobile-container").accordion();
+        $(".footer-middle-mobile-container").accordion({
+            "openedState": "active",
+            "active": false,
+        });
     })
 </script>
