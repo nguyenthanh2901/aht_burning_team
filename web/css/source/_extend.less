@@ -277,7 +277,8 @@
     }
 
     //navigation tab
-    .navigation-tab {
+    .navigation-tab,
+    .product.data.items {
         .lib-data-tabs(@_tab-control-font-family: @font-roboto-bold,
             @_tab-control-font-size: @font-size13,
             @_tab-control-font-weight: @font-weight-700,
@@ -286,7 +287,8 @@
             @_tab-control-color-active: @color-2d,
         );
 
-        &.navigation-tab>.item.content {
+        &.navigation-tab>.item.content,
+        &.product.data.items>.item.content {
             .lib-css(border, @size-1px solid @color-d1);
         }
     }

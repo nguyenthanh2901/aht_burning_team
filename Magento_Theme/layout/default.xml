@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<<<<<<< HEAD
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
 
@@ -6,5 +7,16 @@
             <block class="Magento\Framework\View\Element\Template" name="banner_top" before="-" template="Magento_Theme::banner_top.phtml"/>
             <block class="Magento\Framework\View\Element\Template" name="test" template="Magento_Theme::test.phtml"/>
         </referenceContainer> -->
+=======
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="page.main.title" destination="product.info.main" as="move_title_product" before="-"/>
+>>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
     </body>
 </page>

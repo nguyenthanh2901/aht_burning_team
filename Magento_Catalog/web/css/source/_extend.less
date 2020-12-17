@@ -63,3 +63,149 @@
         padding: 13px 25px;
     }
 }
+& when (@media-common =true) {
+    .fotorama__stage__shaft .fotorama__stage__frame .fotorama__img{
+        top: 37%;
+        width: 100%;
+        height: 100%;
+    }
+    h1.page-title{
+        font-size: 22px;
+        letter-spacing: -1px;
+        line-height: 26px;
+        color: #222222;
+    }
+    span.price-wrapper span.price{
+        font-size: 22px;
+        line-height: 18px;
+        color: #666666;
+    }
+    .product-options-bottom button.action.tocart.primary{
+            .lib-css(height, 40px);
+            .lib-css(width, 100%);
+            .lib-css(border-radius, 0);
+            .lib-css(text-transform, uppercase);
+            .lib-button(@_button-background: @color-green-default,
+                @_button-background-active: @color-green-standard,
+                @_button-font-family: @font-roboto-bold,
+                @_button-color: @color-white,
+                @_button-color-hover: @color-white,
+                @_button-color-active: @color-white,
+                @_button-border: @size-1px solid @color-green-default,
+                @_button-font-size: @font-size13,
+                @_button-background-hover: @color-green-standard);
+
+            &.active {
+                background: @color-green-standard;
+        }
+    }
+   .fotorama__wrap .fotorama__nav-wrap{
+        margin-top: -23%;
+    }
+    div.columns .main .product-info-main{
+        border: 1px #ddd solid;
+        padding: 25px 1px;
+    }
+    .page-layout-1column .main div.product-info-main{
+        width: 33.57%;
+    }
+    .page-layout-1column .main div.product.media{
+        width: 64.52%;
+    }
+    .product-info-main .product h1.page-title{
+        margin: -5px 27px 14px 27px;
+        font-size: 23.3px;
+        letter-spacing: -1.2px;
+    }
+    span.normal-price span.price-wrapper {
+        font-size: 25px;
+        line-height: 18px;
+        color: #666666;
+        letter-spacing: 2px;
+        margin: 0 auto;
+    }
+    .product-info-main .product-info-price .price-box{
+        margin-bottom: 20px;
+        margin: 10px 27px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 22px;
+    }
+    .main .product-add-form{
+        margin: 0 27px;
+    }
+    .product-info-main div.product.attribute.overview{
+        margin: 0 27px;
+    }
+    .product-info-main .price-box .price-wrapper span.price{
+        font-size: 19px;
+        font-weight: 400;
+    }
+    div.fieldset div.field.configurable.required{
+        margin: 20px 0 20px;
+        &.control{
+            margin-bottom: -3px;
+        }
+    }
+    div.control select.super-attribute-select{
+        height: 37px;
+        padding-bottom: 3px;
+    }
+    div.product-info-main div.product-options-wrapper{
+        margin-bottom: -23px;
+    }
+    .product-add-form .product-options-bottom{
+        margin-bottom: -21px;
+    }
+    .product-options-bottom{
+        & .box-tocart{
+            width: 100%;
+            & div.fieldset{
+                & div.actions{
+                    display: block;
+                }
+            }
+        }
+
+        & .box-tocart-custom {
+            margin-top: 92px;
+            & div.fieldset {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & div.qty {
+                    margin-bottom: 0px;
+                    & .control {
+                        button,
+                        input {
+                            width: 42px;
+                            height: 40px;
+                        }
+                    }
+                }
+
+                & div.actions {
+                    width: 61%;
+                    padding-top: 0px;
+                }
+            }
+        }
+    }
+    .choose_your_colour {
+        margin-top: 30px;
+
+        & .swatch-option.image {
+            width: 85px !important;
+            height: 64px !important;
+            border: none;
+            // &:nth-child(1) {
+            //     border: 1px solid #ddd;
+            // }
+
+            &.selected {
+                border: 1px solid #ddd !important;
+                outline: unset !important;
+            }
+        }
+    }
+}

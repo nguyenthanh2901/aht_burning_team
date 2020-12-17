@@ -40,7 +40,10 @@ if ($_attributeType && $_attributeType == 'text') {
     $_attributeValue = ($_helper->productAttribute($_product, $_product->$_call(), $_code))
         ? $_product->getAttributeText($_code)
         : '';
+<<<<<<< HEAD
         
+=======
+>>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
 } else {
     $_attributeValue = $_helper->productAttribute($_product, $_product->$_call(), $_code);
 }
@@ -52,12 +55,38 @@ if ($_attributeType && $_attributeType == 'text') {
         <strong class="type"><?= $block->escapeHtml($_attributeLabel) ?></strong>
     <?php endif; ?>
     <div class="value" <?= /* @noEscape */ $_attributeAddAttribute ?>><?= /* @noEscape */ $_attributeValue ?></div>
+<<<<<<< HEAD
     <?php for ($i=1; $i <=3 ; $i++):?>
     <div class="row">
         <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("detail_block$i")->toHtml();?>
     </div>
 <?php endfor;?>
+=======
+>>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
 </div>
 <?php endif; ?>
 
 
+<<<<<<< HEAD
+=======
+<script>
+require(["jquery"], function($){
+    var elm =  $(".product.attribute.overview");
+    var value = elm.find(".value p").text();
+    $( window ).resize(function() {
+        if($( window ).innerWidth()<1024){
+            var res = value.substring(0, 40);
+            res += " <a href='#tab-label-description-title'>Read more</a> ";
+            elm.find(".value").find("p").html(res);
+        }else {
+            elm.find(".value").find("p").text();
+            value = value.replace("Read more", " ");
+            elm.find(".value").find("p").html(value += "<a href='#tab-label-description-title'>Read more</a>");
+        }
+    });
+    
+    
+});
+
+</script>
+>>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
