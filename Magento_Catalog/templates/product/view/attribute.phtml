@@ -40,10 +40,7 @@ if ($_attributeType && $_attributeType == 'text') {
     $_attributeValue = ($_helper->productAttribute($_product, $_product->$_call(), $_code))
         ? $_product->getAttributeText($_code)
         : '';
-<<<<<<< HEAD
         
-=======
->>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
 } else {
     $_attributeValue = $_helper->productAttribute($_product, $_product->$_call(), $_code);
 }
@@ -55,20 +52,15 @@ if ($_attributeType && $_attributeType == 'text') {
         <strong class="type"><?= $block->escapeHtml($_attributeLabel) ?></strong>
     <?php endif; ?>
     <div class="value" <?= /* @noEscape */ $_attributeAddAttribute ?>><?= /* @noEscape */ $_attributeValue ?></div>
-<<<<<<< HEAD
     <?php for ($i=1; $i <=3 ; $i++):?>
     <div class="row">
         <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("detail_block$i")->toHtml();?>
     </div>
 <?php endfor;?>
-=======
->>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
 </div>
 <?php endif; ?>
 
 
-<<<<<<< HEAD
-=======
 <script>
 require(["jquery"], function($){
     var elm =  $(".product.attribute.overview");
@@ -89,4 +81,3 @@ require(["jquery"], function($){
 });
 
 </script>
->>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
