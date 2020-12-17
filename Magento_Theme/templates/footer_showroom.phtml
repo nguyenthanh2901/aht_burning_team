@@ -1,0 +1,14 @@
+<?= $block->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('footer-showroom-left-img')
+    ->toHtml() ?>
+<div class='footer-showroom-address'>
+    <?= $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer-showroom-address')
+        ->toHtml() ?>
+</div>
+<?= $block->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('footer-showroom-right-img')
+    ->toHtml() ?>

@@ -1,0 +1,51 @@
+<div class="banner-top">
+  <?php for ($i = 1; $i <= 2; $i++) : ?>
+    <div class="banner">
+      <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_img_$i")->toHtml(); ?>
+      <div class="banner_content">
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_text_$i")->toHtml(); ?>
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_button')->toHtml(); ?>
+      </div>
+    </div>
+  <?php endfor; ?>
+</div>
+<script>
+  require([
+    'jquery',
+    'slick'
+  ], function($) {
+    $(document).ready(function() {
+      $('.banner-top').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    });
+  });
+</script>
