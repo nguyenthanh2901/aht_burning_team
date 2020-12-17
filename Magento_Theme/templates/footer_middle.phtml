@@ -17,7 +17,7 @@
     <?php endfor; ?>
 </div>
 <div class="footer-middle-mobile-container">
-    <div class="footer-middle-links-1 footer-middle-links-item">
+    <div class="footer-middle-links-1 footer-middle-links-item" data-role='collapsible'>
         <div data-role='trigger' class="footer-middle-header trigger">
             <?= $block->getLayout()
                 ->createBlock('Magento\Cms\Block\Block')
@@ -51,6 +51,6 @@
 
 <script>
     require(['jquery', 'accordion'], function($) {
-        $(".footer-middle-mobile-container").accordion();
+        $(".footer-middle-mobile-container").accordion({ "openedState": "active", "active":false });
     })
 </script>

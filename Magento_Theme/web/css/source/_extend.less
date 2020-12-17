@@ -622,6 +622,9 @@
         margin-top: @size-14px;
 
         .footer-middle-links-item {
+            &.active .footer-middle-header>:first-child:after {
+                content: '\2014';
+            }
             .trigger {
                 >:first-child {
                     font-size: @font-size18;
