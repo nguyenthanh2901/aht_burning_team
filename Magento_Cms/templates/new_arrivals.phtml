@@ -1,0 +1,19 @@
+<div class="section-new-arrivals">
+    <div class="title">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('title-new-arrivals')
+                    ->toHtml();
+        ?>
+    </div>
+
+    <div class="content">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('new-arrivals')
+                    ->toHtml();
+        ?>
+    </div>
+</div>

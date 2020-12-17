@@ -1,0 +1,93 @@
+<div class="section-outdoor-inspiration">
+    <div class="title">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('title-outdoor')
+                    ->toHtml();
+        ?>
+    </div>
+
+    <div class="content">
+        <div class="list-items">
+            <?php
+                echo $block->getLayout()
+                        ->createBlock('Magento\Cms\Block\Block')
+                        ->setBlockId('outdoor-inspiration')
+                        ->toHtml();
+            ?>
+        </div>
+    </div>
+
+    <div class="button-view-our">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('view-our-instagram')
+                    ->toHtml();
+        ?>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".list-items").slick({
+                rows: 1,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                dots: true,
+                infinite: true,
+                speed: 300,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            // dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            // dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            // dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 380,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            arrows: false,
+                            infinite: true
+                        }
+                    }
+                ]
+            });
+        });
+    });
+</script>

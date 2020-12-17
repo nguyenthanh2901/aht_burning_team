@@ -52,10 +52,11 @@
             @_button-color: @color-white,
             @_button-color-hover: @color-white,
             @_button-color-active: @color-white,
-            @_button-border: @size-1px solid @color-green-default,
-            @_button-font-size: @font-size13,
+            @_button-border: 1px solid @color-green-default,
+            @_button-font-size: 13px,
             @_button-background-hover: @color-green-standard);
 
+        &:hover,
         &.active {
             background: @color-green-standard;
         }
@@ -68,9 +69,10 @@
         //standard button
         &.standard-button,
         &.action.tocart.primary {
+
             .lib-button(@_button-background: @color-white,
                 @_button-color: @color-black,
-                @_button-border: @size-1px solid @color-black,
+                @_button-border: 1px solid @color-black,
                 @_button-color-hover: @color-white,
                 @_button-background-hover: @color-black,
                 @_button-font-family: @font-roboto-bold,
@@ -85,27 +87,7 @@
                 @_button-color: @color-white,
                 @_button-background-hover: @color-white,
                 @_button-color-hover: @color-black,
-                @_button-border: @size-1px solid @color-white)
-        }
-
-        //adjustable button
-        &.button-adjust {
-            .lib-button(@_button-background: @color-white,
-                @_button-color: @color-a9,
-                @_button-color-hover: @color-a9,
-                @_button-background-hover: @color-f8,
-                @_button-font-family: @font-roboto-bold,
-                @_button-color-active: @color-a9,
-                @_button-background-active: @color-f8);
-
-            &.active {
-                background: @color-f8;
-            }
-
-            &:visited {
-                background: @color-f8;
-                color: @color-a9;
-            }
+                @_button-border: 1px solid @color-white)
         }
     }
 
@@ -114,116 +96,122 @@
     select,
     textarea {
         .lib-form-element-color(@_background: @color-white,
-            @_border-color: @color-ddd,
+            @_border-color: #ddd,
             @_color: @color-black,
             @_focus-color: @color-black,
-            @_focus-border-color: @color-ddd);
+            @_focus-border-color: #ddd);
     }
 
-    input {
-        &:not([disabled]):focus {
-            .lib-css(box-shadow, none);
-        }
-        
-        //input adjust
-        &.input-adjust {
-            .lib-css(margin, 0px -5px);
-            .lib-css(padding-bottom, 3px);
-            .lib-css(max-width, 40px);
-            .lib-css(max-height, 40px);
-            .lib-css(text-align, center);
-            .lib-css(color, @color-333);
-        }
-
-        // input checkbox
-        &[type='checkbox'] {
-            .lib-css(visibility, hidden);
-
-            &:checked+label:before {
-                .lib-css(background, @color-white);
-                .lib-css(color, @color-black);
-                .lib-css(content, "");
-                .lib-css(text-align, center);
-                .lib-css(font-size, @size-20px);
-            }
-
-            &:checked+label:after {
-                .lib-css(content, "");
-                .lib-css(width, 5px);
-                .lib-css(height, 8px);
-                .lib-css(border-width, 0 2px 2px 0);
-                .lib-css(border-style, solid);
-                .lib-css(border-color, @color-black);
-                .lib-css(transform, rotate(45deg));
-                .lib-css(position, absolute);
-                .lib-css(left, 0);
-                .lib-css(margin, 4px 4px 4px 8px);
-            }
-
-            &+label:before {
-                .lib-css(border, @size-1px solid @color-ddd);
-                .lib-css(content, "");
-                .lib-css(display, inline-block);
-                .lib-css(margin, 0 10px -6px 0);
-                .lib-css(padding, 0);
-                .lib-css(vertical-align, top);
-                .lib-css(width, @size-20px);
-                .lib-css(height, @size-20px);
-            }
-        }
-
-        //input radio
-        &[type="radio"] {
-            .lib-css(visibility, hidden);
-
-            &:checked+label:after {
-                .lib-css(background, @color-333);
-                .lib-css(color, @color-white);
-                .lib-css(content, "");
-                .lib-css(text-align, center);
-                .lib-css(width, 8px);
-                .lib-css(height, 8px);
-                .lib-css(position, absolute);
-                .lib-css(left, 0);
-                .lib-css(margin, 7px);
-                .lib-css(border-radius, 50%);
-            }
-
-            &+label:before {
-                .lib-css(border-radius, 50%);
-                .lib-css(vertical-align, baseline);
-                .lib-css(border, @size-1px solid @color-ddd);
-                .lib-css(content, "");
-                .lib-css(display, inline-block);
-                .lib-css(margin, 0 10px -6px 0);
-                .lib-css(padding, 0);
-                .lib-css(vertical-align, top);
-                .lib-css(width, @size-20px);
-                .lib-css(height, @size-20px);
-            }
-        }
+    input[type='checkbox'],
+    input[type="radio"] {
+        visibility: hidden;
     }
 
     label {
-        .lib-css(cursor, pointer);
-        .lib-css(position, relative);
+        cursor: pointer;
+        position: relative;
     }
 
-    //input text, select
+    input[type="checkbox"]+label:before,
+    input[type="radio"]+label:before {
+        border: 1px solid #ddd;
+        content: "";
+        display: inline-block;
+        margin: 0 10px 0 0;
+        padding: 0;
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+    }
+
+    input[type="radio"]:checked+label:after {
+        background: #333;
+        color: @color-white;
+        content: "";
+        text-align: center;
+    }
+
+    input[type="checkbox"]:checked+label:before {
+        background: white;
+        color: @color-black;
+        content: "\2713";
+        text-align: center;
+        font-size: 20px;
+    }
+
+    input[type="radio"]+label:before {
+        border-radius: 50%;
+        vertical-align: baseline;
+    }
+
+    input[type="radio"]:checked+label:after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        left: 0;
+        margin: 7px;
+        border-radius: 50%;
+    }
+
+    h1 {
+        font-family: @font-lora-regular;
+        font-size: 32px;
+    }
+
+    h2 {
+        font-family: @font-lora-regular;
+        font-size: 24px;
+    }
+
+    h3 {
+        font-family: @font-lora-regular;
+        font-size: 18px;
+    }
+
+    h4 {
+        font-family: @font-roboto-bold;
+        font-size: 15px;
+    }
+
+    a {
+        font-family: @font-roboto-regular;
+        color: #333;
+        cursor: pointer;
+
+        &:hover {
+            color: #777;
+        }
+    }
+
+    body {
+        font-family: @font-roboto-regular;
+        font-size: 13px;
+        line-height: 20px;
+        color: #333;
+    }
+
     input[type=text],
     select {
-        .lib-css(box-sizing, border-box);
-        .lib-css(font-size, @font-size13);
-        .lib-css(line-height, @size-30px);
-        .lib-css(color, @color-333);
-        .lib-css(font-family, @font-roboto-regular);
-        .lib-css(text-align, left);
-        .lib-css(padding, 0 @font-size13);
+        box-sizing: border-box;
+        font-size: 13px;
+        line-height: 30px;
+        color: #333;
+        font-family: @font-roboto-regular;
+        text-align: left;
+        padding: 0 13px;
 
-        &:not([disabled]):focus,
         &:focus {
-            .lib-css(box-shadow, none);
+            box-shadow: none;
         }
+    }
+
+    select:not([disabled]):focus {
+        box-shadow: none;
+    }
+
+    select {
+        padding: 0 9px;
     }
 
     input.mage-error,
@@ -233,14 +221,13 @@
     }
 
     div.mage-error {
-        .lib-css(color, @color-red9);
+        color: @color-red9;
     }
 
-    // alert
     .message-success {
         .lib-message(success);
         .lib-css(background, @color-white);
-        .lib-css(border, solid @size-1px @color-green-message );
+        .lib-css(border, solid 1px @color-green-message );
         .lib-css(text-align, center);
         .lib-css(color, @color-green-message);
     }
@@ -248,7 +235,7 @@
     .message-error {
         .lib-message(error);
         .lib-css(background, @color-white);
-        .lib-css(border, solid @size-1px @color-red-validate );
+        .lib-css(border, solid 1px @color-red-validate );
         .lib-css(text-align, center);
     }
 

@@ -1,0 +1,84 @@
+<div class="section-new-seller">
+    <div class="title">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('title-best-sellers')
+                    ->toHtml();
+        ?>
+    </div>
+
+    <div class="content">
+        <?php
+            echo $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId('new-sellers')
+                    ->toHtml();
+        ?>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".product-items").slick({
+                rows: 1,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false,
+                infinite: true,
+                speed: 300,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 380,
+                        settings: {
+                            rows: 2,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: false,
+                            arrows: false,
+                            infinite: true
+                        }
+                    }
+                ]
+            });
+        });
+    });
+</script>
+

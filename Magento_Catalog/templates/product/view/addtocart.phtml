@@ -9,21 +9,22 @@
 <?php $_product = $block->getProduct(); ?>
 <?php $buttonTitle = __('Add to Cart'); ?>
 <?php if ($_product->isSaleable()) :?>
-<div class="box-tocart">
+<div class="box-tocart box-tocart-custom">
     <div class="fieldset">
         <?php if ($block->shouldRenderQuantity()) :?>
-        <div style="display: none;" class="field qty">
-            <label class="label" for="qty"><span><?= $block->escapeHtml(__('Qty')) ?></span></label>
+        <div class="field qty">
             <div class="control">
+                <button class="button-adjust" type="button">+</button>
                 <input type="number"
                        name="qty"
                        id="qty"
                        min="0"
                        value="<?= $block->getProductDefaultQty() * 1 ?>"
                        title="<?= $block->escapeHtmlAttr(__('Qty')) ?>"
-                       class="input-text qty"
+                       class="input-text qty input-adjust"
                        data-validate="<?= $block->escapeHtmlAttr(json_encode($block->getQuantityValidators())) ?>"
                        />
+                <button class="button-adjust" type="button">-</button>
             </div>
         </div>
         <?php endif; ?>
