@@ -23,6 +23,7 @@
             background: @color-black2d;
             padding: 10px 20px;
             font-family: @font-roboto-bold;
+            text-transform: uppercase;
         }
 
     }
@@ -87,8 +88,9 @@
         text-align: center;
         background: @color-black2d;
         color: @color-white;
-        padding: 9px;
+        padding: 8px 0 1px;
         font-size: @size-13;
+        margin-top:-7px;
 
         a {
             color: @color-whitef;
@@ -1676,6 +1678,7 @@
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
     .banner {
         .banner_content {
+            margin:0;
             .title {
                 font-size: @size-200;
                 margin-left: -23px;
@@ -1685,8 +1688,8 @@
             }
 
             .summary {
-                margin: 1.2em 0 1em;
-                letter-spacing: 1px;
+                margin: 1.28em 0 0.8em;
+                letter-spacing: -0.4px;
                 word-spacing: 5px;
                 font-size: @size-32;
                 line-height: 1;
@@ -1699,7 +1702,9 @@
         .col-content {
             .title {
                 font-size: @size-42;
-                margin-bottom: 28px;
+                margin-top: -12px;
+                margin-bottom: 32px;
+                
             }
 
         }
@@ -1710,6 +1715,7 @@
             .title {
                 font-size: @size-52;
                 margin-bottom: 42px;
+                margin-top:-6px;
             }
 
             button {
