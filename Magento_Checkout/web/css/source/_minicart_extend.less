@@ -1,0 +1,157 @@
+& when (@media-common =true) {
+    .minicart-wrapper {
+        display: inline-block;
+        position: relative;
+        float: right;
+        flex-basis: 27%;
+        text-align: right;
+        display: inline-block;
+        margin-right: 5px;
+
+        .action {
+            &.showcart {
+                .counter.qty {
+                    display: block;
+                    background: #23ad1c;
+                    top: -5px;
+                    font-size: 11px;
+                    right: -7px;
+                    line-height: @size-20px;
+                    position: absolute;
+                    height: @font-size18;
+                    border-radius: 50%;
+                    width: @font-size18;
+                    padding: 0;
+                    font-family: @font-roboto-regular;
+                    margin-top: 0;
+                }
+
+                &:before {
+                    line-height: @font-size13;
+                    content: url('../images/ic_shopping_cart_black_24px.png')
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
+    .minicart-wrapper {
+        margin-top: 10px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__380) {
+    .minicart-wrapper {
+        margin-top: 0;
+
+        .action {
+            &.showcart {
+                &:before {
+                    line-height: 0;
+
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .minicart-wrapper {
+        width: 7%;
+        margin-top: 5px;
+        text-align: left;
+        margin-right: 0;
+        margin-left: 0;
+
+        .action.showcart {
+            padding-left: 29px;
+            position: relative;
+            margin-left: 14px;
+            margin-top: 2px;
+
+            &:before {
+                content: '';
+                background: url(../images/ic_shopping_cart_red_24px.png) no-repeat;
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .text {
+                top: 3px;
+                color: #d40000;
+                overflow: visible;
+                font-family: @font-roboto-medium;
+                font-size: @font-size13;
+            }
+
+            .counter.qty {
+                top: -6px;
+                right: -9px;
+                font-size: 12px;
+                background: none;
+                position: absolute;
+                color: white;
+                line-height: @font-size18;
+                background: #23ad1c;
+                height: @font-size18;
+                border-radius: 50%;
+                margin-top: 0;
+                width: @font-size18;
+                padding: 0;
+                font-family: @font-roboto-medium;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum='min') and (@break =@screen__l) {
+    .minicart-wrapper {
+        .action.showcart {
+            .text {
+                position: relative;
+                display: inline-block;
+                top: 0;
+                margin: 0;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+            }
+
+            .counter.qty {
+                border-radius: 2px;
+                min-width: @font-size18;
+                position: relative;
+                top: 0;
+                right: 0;
+                white-space: normal;
+                font-size: @font-size13;
+                line-height: @size-20px;
+                overflow: hidden;
+                width: 100%;
+                font-family: @font-roboto-medium;
+                display: inline-block;
+                background: #fff;
+                color: #d40000;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+            }
+
+            .counter-number {
+                &:before {
+                    content: "(";
+                }
+
+                &:after {
+                    content: ")";
+                }
+            }
+        }
+    }
+}

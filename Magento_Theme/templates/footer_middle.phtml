@@ -1,0 +1,56 @@
+<div class="footer-middle-desktop-container">
+    <?php for ($i = 1; $i <= 3; $i++) : ?>
+        <div class="footer-middle-links-<?= $i ?> footer-middle-item">
+            <div class="footer-middle-header trigger">
+                <?= $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId("footer-middle-$i-header")
+                    ->toHtml() ?>
+            </div>
+            <div class="content">
+                <?= $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId("footer-middle-links-$i")
+                    ->toHtml() ?>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+<div class="footer-middle-mobile-container">
+    <div class="footer-middle-links-1 footer-middle-links-item" data-role='collapsible'>
+        <div data-role='trigger' class="footer-middle-header trigger">
+            <?= $block->getLayout()
+                ->createBlock('Magento\Cms\Block\Block')
+                ->setBlockId("footer-middle-1-header")
+                ->toHtml() ?>
+        </div>
+        <div class="content" data-role="content">
+            <?= $block->getLayout()
+                ->createBlock('Magento\Cms\Block\Block')
+                ->setBlockId("footer-middle-links-mobile-1")
+                ->toHtml() ?>
+        </div>
+    </div>
+    <?php for ($i = 2; $i <= 3; $i++) : ?>
+        <div class="footer-middle-links-<?= $i ?> footer-middle-links-item" data-role='collapsible'>
+            <div data-role='trigger' class="footer-middle-header trigger">
+                <?= $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId("footer-middle-$i-header")
+                    ->toHtml() ?>
+            </div>
+            <div data-role='content' class="content">
+                <?= $block->getLayout()
+                    ->createBlock('Magento\Cms\Block\Block')
+                    ->setBlockId("footer-middle-links-$i")
+                    ->toHtml() ?>
+            </div>
+        </div>
+    <?php endfor; ?>
+</div>
+
+<script>
+    require(['jquery', 'accordion'], function($) {
+        $(".footer-middle-mobile-container").accordion({ "openedState": "active", "active":false });
+    })
+</script>
