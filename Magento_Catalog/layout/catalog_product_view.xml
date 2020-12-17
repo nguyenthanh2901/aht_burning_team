@@ -12,5 +12,9 @@
        <referenceBlock name="product.info.review" remove="true" />
        <referenceContainer name="product.info.social" remove="true"/>
        <move element="page.main.title" destination="product.info.main" before="-"/>
+
+       <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.detail.custom.accordion" as="detail_custom_accordion" template="Magento_Catalog::product/view/product_detail_accordion.phtml" after="-" />
+        </referenceContainer>
     </body>
 </page>
