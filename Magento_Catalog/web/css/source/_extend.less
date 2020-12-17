@@ -65,9 +65,8 @@
         border-bottom: 1px solid #ddd;
         padding-bottom: 22px;
     }
-    .main .product-add-form{
-        margin: 0 27px;
-    }
+    .main .product-add-form,
+    .main .section-detail-accordion,
     .product-info-main div.product.attribute.overview{
         margin: 0 27px;
     }
@@ -91,6 +90,9 @@
     .product-add-form .product-options-bottom{
         margin-bottom: -21px;
     }
+}
+
+.media-width(@extremum, @break) when (@extremum='min') and (@break = @screen__l) {
     .product-options-bottom{
         & .box-tocart{
             width: 100%;
@@ -133,9 +135,6 @@
             width: 85px !important;
             height: 64px !important;
             border: none;
-            // &:nth-child(1) {
-            //     border: 1px solid #ddd;
-            // }
 
             &.selected {
                 border: 1px solid #ddd !important;
@@ -143,4 +142,84 @@
             }
         }
     }
+
+    .product-detail-ads {
+        .product-ads-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                a {
+                    display: block;
+                    text-align: center;
+                    text-decoration: underline;
+                    color: @color-black;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .product-ads-bottom {
+            position: relative;
+
+            & p:nth-child(2),
+            & p:nth-child(3) {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                font-weight: bold;
+            }
+
+            & p:nth-child(2) {
+                top: 25%;
+                font-size: 20px;
+            }
+
+            & p:nth-child(3) {
+                top: 40%;
+                text-align: center;
+                width: 100%;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .product-info-main {
+        .page-title {
+            line-height: 26px;
+        }
+
+        .product-info-price {
+            margin-top: 42px;
+        }
+
+        .product-add-form {
+            margin-top: -10px;
+        }
+
+        .product-options-bottom {
+            .box-tocart-custom {
+                margin-top: 40px;
+            }
+        }
+
+        .product.attribute.overview {
+            margin-top: -20px;
+        }
+
+        .section-detail-accordion {
+            margin-top: 20px;
+            h4 {
+                letter-spacing: -0.9px;
+            }
+            span {
+                margin-right: 10px;
+            }
+
+            .product-detail-ads {
+                padding-top: 0px;
+            }
+        }
+    }
+
 }

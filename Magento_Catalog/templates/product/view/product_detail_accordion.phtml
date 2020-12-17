@@ -1,0 +1,71 @@
+<div class="section-detail-accordion">
+    <div id="accordion-detail-product" data-mage-init='{
+            "accordion":{
+                "active": [1, 2],
+                "collapsible": true,
+                "openedState": "active",
+                "multipleCollapsible": true
+            }}'>
+        <div data-role="collapsible">
+            <div data-role="trigger" style="display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;">
+                <h4>This product includes</h4>
+                <span style="font-size: 20px;
+                            color: gray;">
+                            +</span>
+            </div>
+        </div>
+        <div data-role="content">
+            <?php
+                echo $block->getLayout()
+                        ->createBlock('Magento\Cms\Block\Block')
+                        ->setBlockId('product-detail-accordion')
+                        ->toHtml();
+            ?>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="product-detail-ads">
+        <div class="product-ads-flex">
+            <?php
+                echo $block->getLayout()
+                        ->createBlock('Magento\Cms\Block\Block')
+                        ->setBlockId('product-detail-ads')
+                        ->toHtml();
+            ?>
+        </div>
+
+        <div class="product-ads-bottom">
+            <?php
+                echo $block->getLayout()
+                        ->createBlock('Magento\Cms\Block\Block')
+                        ->setBlockId('product-detail-ads-bottom')
+                        ->toHtml();
+            ?>
+        </div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'accordion'], function ($) {
+            var elmAccordion = $("#accordion-detail-product");
+            var toggleValue = elmAccordion.find('span');
+
+            elmAccordion.on("dimensionsChanged", function (event, data) {
+            var opened = data.opened;
+
+            if (opened) {
+                // console.log(toggleValue);
+                toggleValue.text('-');
+                return;
+            }
+            toggleValue.text('+');
+            // do something when the content is closed
+        });
+    });
+</script>
