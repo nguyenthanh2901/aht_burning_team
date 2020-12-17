@@ -18,15 +18,15 @@
 //  Media width mixin used to group styles output based on media queries
 //  ---------------------------------------------
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-}
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {}
 
 //
 //  Style groups for 'mobile' devices
 //  ---------------------------------------------
 
-& when (@media-target = 'mobile'), (@media-target = 'all') {
-    
+& when (@media-target ='mobile'),
+(@media-target ='all') {
+
     @media only screen and (max-width: @screen__m) {
         .media-width('max', (@screen__m + 1));
     }
@@ -42,9 +42,11 @@
     @media only screen and (max-width: (@screen__xs - 1)) {
         .media-width('max', @screen__xs);
     }
+
     @media only screen and (max-width: (@screen__380 - 1)) {
         .media-width('max', @screen__380);
     }
+
     @media only screen and (max-width: (@screen__xxs - 1)) {
         .media-width('max', @screen__xxs);
     }
@@ -59,7 +61,8 @@
 //  Style groups for 'desktop' devices
 //  ---------------------------------------------
 
-& when (@media-target = 'desktop'), (@media-target = 'all') {
+& when (@media-target ='desktop'),
+(@media-target ='all') {
 
     @media all and (min-width: @screen__m),
     print {

@@ -7,7 +7,6 @@
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-<<<<<<< HEAD
     <referenceBlock name="product.attributes" remove="true"/>
         <referenceContainer name="content" > 
             <referenceContainer name="product.info.stock.sku" remove="true"/>
@@ -39,7 +38,6 @@
                 
             </referenceBlock>
         </referenceContainer>
-=======
         <referenceBlock name="test" remove="true" />
         <referenceContainer name="product.info.stock.sku" remove="true"/>
         <referenceBlock name="product.info.review" remove="true" />
@@ -51,6 +49,5 @@
                 <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.info.detail.custom" as="detail_custom" template="Magento_Catalog::product/view/attributes_custom.phtml" before="-" />        
             </container>
         </referenceContainer> -->
->>>>>>> a7aa1d2e24a55c6383e4be470b8849b922243fbb
     </body>
 </page>
