@@ -11,10 +11,7 @@
 }
 
 & when (@media-common =true) {
-    p {
-        margin: 0;
-    }
-
+   
 
 
     .page-main {
@@ -35,12 +32,7 @@
         font-size: @size-20;
     }
 
-    .title {
-        font-family: @font-lora-re;
-        // font-size: @size-24;
-        color: @color-white;
-        text-align: center;
-    }
+   
 
 
     // BANNER
@@ -48,6 +40,9 @@
         overflow: hidden;
 
         .banner {
+            p {
+                margin: 0;
+            }
             position: relative;
 
             img {
@@ -66,6 +61,8 @@
                 .title {
                     font-family: @font-market-re;
                     font-weight: bold;
+                    color: @color-white;
+                    text-align: center;
                 }
 
                 .summary {
@@ -101,16 +98,23 @@
     }
 
     .col-content {
+        p {
+            margin: 0;
+        }
         .title {
             font-family: @font-lora-bold;
             margin-bottom: 15px;
             letter-spacing: 1px;
+            color: @color-white;
+            text-align: center;
         }
     }
 
     .banner-2 {
         background: @color-whitee;
-
+        p {
+            margin: 0;
+        }
         .collection-content {
             text-align: Center;
 
@@ -118,6 +122,8 @@
                 font-size: @size-24;
                 color: @color-black2;
                 text-transform: capitalize;
+                font-family: @font-lora-re;
+                text-align: center;
             }
 
             .summary {
@@ -139,7 +145,13 @@
 
     .banner-tiles2 {
         .col-content {
+            p {
+                margin: 0;
+            }
             .title {
+                font-family: @font-lora-re;
+                color: @color-white;
+                text-align: center;
                 font-size: @size-52;
                 margin-bottom: 42px;
             }
@@ -185,10 +197,13 @@
         }
 
         .blog-content {
-
+            p {
+                margin: 0;
+            }
             .title {
                 color: @color-black2;
-                // padding: 14px 0 19px;
+                font-family: @font-lora-re;
+                text-align: center;
             }
 
             .summary {
@@ -208,9 +223,8 @@
     .testimonial-blog {
 
         position: relative;
-
         text-align: center;
-
+        
         .blog-border {
             .blogBorder();
 
@@ -245,6 +259,9 @@
                 .testi-content {
                     margin-top: 23px;
                     line-height: 1.2;
+                    p {
+                        margin: 0;
+                    }
                 }
 
                 .testi-name {
@@ -861,6 +878,7 @@
             .furniture-blog {
                 .blog-content {
                     .title {
+                        margin-top:12px;
                         padding-top: 12px;
                         padding: 0;
                     }
