@@ -1,14 +1,32 @@
-<div class="banner-top">
-  <?php for ($i = 1; $i <= 2; $i++) : ?>
-    <div class="banner">
-      <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_img_$i")->toHtml(); ?>
-      <div class="banner_content">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_text_$i")->toHtml(); ?>
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_button')->toHtml(); ?>
+<div class="banner-desktop desktop">
+  <div class="banner-top">
+    <?php for ($i = 1; $i <= 2; $i++) : ?>
+      <div class="banner ">
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_img_$i")->toHtml(); ?>
+        <div class="banner_content">
+          <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_text_$i")->toHtml(); ?>
+          <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_button')->toHtml(); ?>
+        </div>
       </div>
-    </div>
-  <?php endfor; ?>
+      
+    <?php endfor; ?>
+  </div>
 </div>
+<div class="banner-mobile mobile">
+  <div class="banner-top">
+    <?php for ($i = 1; $i <= 2; $i++) : ?>
+      <div class="banner">
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_mobile_img_$i")->toHtml(); ?>
+      <div class="banner_content">
+          <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId("banner_top_text_$i")->toHtml(); ?>
+          <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_button')->toHtml(); ?>
+        </div>
+      </div>
+      
+    <?php endfor; ?>
+  </div>
+</div>
+
 <script>
   require([
     'jquery',

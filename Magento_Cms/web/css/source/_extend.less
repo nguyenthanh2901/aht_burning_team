@@ -6,7 +6,7 @@
 
 .blogBorder() {
     text-transform: capitalize;
-    font-size: @size-32;
+    // font-size: @size-32;
     text-align: center;
 }
 
@@ -24,8 +24,7 @@
     button {
         &.standard-button-black {
             background: @color-black2d;
-            padding: 15px 30px;
-            font-size: @size-15;
+            padding: 10px 20px;
             font-family: @font-roboto-bold;
         }
 
@@ -36,42 +35,57 @@
         font-size: @size-20;
     }
 
-    //BANNER
-    .banner {
-        position: relative;
+    .title {
+        font-family: @font-lora-re;
+        // font-size: @size-24;
+        color: @color-white;
+        text-align: center;
+    }
 
-        .banner_content {
-            position: absolute;
-            top: 50%;
-            text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
 
-            .title {
-                font-family: @font-market-re;
-                font-size: @size-53;
-                font-weight: bold;
+    // BANNER
+    .banner-top {
+        overflow: hidden;
+
+        .banner {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
             }
 
-            .summary {
-                margin: 1.2em 0 1em;
-                font-size: @size-20;
-                letter-spacing: 1px;
-                word-spacing: 5px;
-                color: @color-whitef;
-                font-family: @font-lora-re;
+            .banner_content {
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+
+                .title {
+                    font-family: @font-market-re;
+                    font-weight: bold;
+                }
+
+                .summary {
+                    // font-size: @size-20;
+                    color: @color-whitef;
+                    font-family: @font-lora-re;
+
+                }
+
+                a {
+                    font-family: @font-openSans-bold;
+                }
 
             }
-
-            a {
-                font-family: @font-openSans-bold;
-            }
-
         }
     }
 
+
     .reason-carosel {
+        overflow: hidden;
         text-transform: uppercase;
         text-align: center;
         background: @color-black2d;
@@ -79,15 +93,10 @@
         padding: 9px;
         font-size: @size-13;
 
-        p {
-            border-right: 1px solid @color-whitee;
-
-            a {
-                color: @color-whitef;
-                margin-left: -1.2em;
-                word-spacing: 2px;
-            }
-
+        a {
+            color: @color-whitef;
+            margin-left: -1.2em;
+            word-spacing: 2px;
         }
     }
 
@@ -104,9 +113,9 @@
 
         .collection-content {
             text-align: Center;
-            padding: 27px 25px 36px;
 
             .title {
+                font-size: @size-24;
                 color: @color-black2;
                 text-transform: capitalize;
             }
@@ -142,6 +151,16 @@
                 }
             }
         }
+
+        .tiles-video {
+            width: 610px;
+            height: 437px;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
     //FURNITURE BLOG
@@ -154,50 +173,42 @@
 
             &:before {
                 content: '';
-                width: 40%;
                 border-bottom: 1px solid @color-grayc;
-                top: 13px;
                 position: absolute;
                 left: 0;
             }
 
             &:after {
                 content: "";
-                width: 40%;
                 position: absolute;
                 right: 0;
                 border-bottom: 1px solid @color-grayc;
-                top: 13px;
             }
         }
 
-        .blog-main {
-            margin-top: 38px;
+        .blog-content {
 
-            .blog-content {
-                margin: 15px 0;
+            .title {
+                color: @color-black2;
+                // padding: 14px 0 19px;
+            }
 
-                .title {
-                    color: @color-black2;
-                }
+            .summary {
+                // padding: 12px 0 13px;
+                color: @color-black3;
+                font-family: @font-roboto-re;
 
-                .summary {
-                    color: @color-black3;
-                    font-family: @font-roboto-re;
-                    padding: 12px 0 19px;
-                }
+            }
 
-                a {
-                    .a();
-                }
+            a {
+                .a();
             }
         }
     }
 
-
     //TESTIMONIAL
     .testimonial-blog {
-        margin-top: 30px;
+
         position: relative;
 
         text-align: center;
@@ -207,9 +218,7 @@
 
             &:before {
                 content: '';
-                width: 34%;
                 position: absolute;
-                top: 14px;
                 border-bottom: 1px solid @color-grayc;
                 left: 0;
             }
@@ -218,23 +227,18 @@
                 content: '';
                 position: absolute;
                 right: 0;
-                width: 34%;
-                top: 14px;
                 border-bottom: 1px solid @color-grayc;
             }
         }
 
         .testi-main {
-            margin-top: 24px;
-            margin-bottom: 13px;
 
             .testimonial {
                 font-family: @font-roboto-re;
                 font-size: @size-13;
                 text-align: left;
-                padding: 35px 38px;
-                margin: 10px;
                 border: 1px solid #ccc;
+                text-transform: capitalize;
 
                 a {
                     .a();
@@ -261,62 +265,645 @@
     }
 }
 
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xxs) {
+    .tiles {
+        .col-content {
+            button {
+                &.standard-button-black {
+                    font-size: @size-13;
+                    padding: 4px 19px;
+                }
+            }
+        }
+    }
+
+    button {
+        &.standard-button-black {
+            font-size: @size-10;
+        }
+    }
+
+    .reason-carosel {
+        padding: 5px;
+
+        a {
+            font-size: @size-9;
+        }
+    }
+
+    .banner-2 {
+        .collection-content {
+            padding: 16px 5px;
+
+            .summary {
+                font-size: @size-12;
+            }
+        }
+    }
+
+    .testimonial-blog {
+        .testi-main {
+            .testimonial {
+                font-size: @size-11;
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+            font-size: @size-18;
+
+        }
+
+        .blog-content {
+            .summary {
+                font-size: @size-11;
+            }
+        }
+
+    }
+
+    .testimonial-blog {
+        .testi-main {
+            .testimonial {
+                padding: 15px;
+            }
+        }
+
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__380) {
+
+    .banner {
+        .banner_content {
+            margin: 0;
+
+            .title {
+                font-size: @size-50;
+            }
+
+            .summary {
+                font-size: @size-15;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 8px 16px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+
+            &:before {
+                width: 25%;
+                top: 13px;
+            }
+
+            &:after {
+                width: 25%;
+                top: 13px;
+            }
+        }
+
+    }
+
+    .testimonial-blog {
+        .blog-border {
+            &:before {
+                width: 10%;
+                top: 10px;
+            }
+
+            &:after {
+                top: 10px;
+                width: 10%;
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .banner {
+        .banner_content {
+
+            .title {
+                font-size: @size-60;
+            }
+
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    button {
+        &.standard-button-black {
+            font-size: @size-13;
+        }
+    }
+
+    .page-main {
+        padding: 0;
+    }
+
+    .banner {
+        .banner_content {
+            margin-left: 10px;
+
+            .title {
+                font-size: @size-80;
+            }
+
+            .summary {
+                font-size: @size-22;
+                margin: 2.2em 0 1em;
+                letter-spacing: 0;
+                word-spacing: 0;
+            }
+
+            button {
+                &.standard-button-black {
+                    font-size: @size-13;
+                    padding: 9px 22px;
+                    margin-left: -20px;
+                }
+            }
+        }
+    }
+
+    .row {
+        margin: 0;
+        flex-direction: column;
+
+        .col {
+            margin: 6px 0 1px;
+        }
+    }
+
+    .tiles {
+
+        // margin:6px 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col-content {
+            margin-top: -7px;
+
+            .title {
+                font-size: @size-25;
+                margin-bottom: 18px;
+                letter-spacing: normal;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 9px 14px;
+                }
+            }
+        }
+    }
+
+    .banner-tiles2 {
+        .desktop {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .reason-carosel {
+        margin: 2px 0 3px;
+        font: @size-12;
+    }
+
+    .banner-2 {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .collection-content {
+            // padding: 27px 5px 33px;
+            padding: 25px 10px 30px;
+            // margin-bottom: 5px;
+            margin-bottom: 7px;
+        }
+    }
+
+    .our-blog {
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
+
+        .blog-border {
+            font-size: @size-22;
+
+            &:before {
+                width: 27%;
+                top: 11px;
+            }
+
+            &:after {
+                width: 27%;
+                top: 11px;
+            }
+        }
+
+        .blog-main {
+            margin-top: 24px;
+
+            .furniture-blog {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .blog-content {
+                    margin: 10px 0 17px;
+
+                    .title {
+                        text-align: left;
+                        font-size: @size-18;
+                    }
+
+                    .summary {
+                        font-size: @size-13;
+                        padding-top: 13px;
+                        padding-bottom: 19px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .testimonial-blog {
+        margin-top: 24px;
+
+        .blog-border {
+            font-size: @size-22;
+
+            &:before {
+                width: 11%;
+                top: 10px;
+            }
+
+            &:after {
+                top: 10px;
+                width: 11%;
+            }
+        }
+
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
+
+        .testi-main {
+            margin-top: 20px;
+            margin-bottom: 13px;
+
+            .testimonial {
+                padding: 26px 28px;
+                margin: 10px 0 11px;
+            }
+        }
+
+        button {
+            &.standard-button {
+                width: 100%;
+                // font-size:@size-13;
+            }
+        }
+    }
+}
+
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    button {
+        &.standard-button-black {
+            font-size: @size-15;
+        }
+
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .banner {
+        .banner_content {
+            .title {
+                font-size: @size-80;
+            }
+
+            .summary {
+                margin: 1.2em 0 1em;
+                font-size: @size-18;
+            }
+        }
+    }
+
     .tiles {
         margin-bottom: 13px;
 
         .col-content {
             .title {
-                font-size: @size-42;
+                font-size: @size-28;
                 margin-bottom: 30px;
                 letter-spacing: 0;
             }
         }
     }
 
-    .our-blog .row {
-        flex-wrap: wrap;
+    .reason-carosel {
+        p {
+            border-right: 1px solid @color-whitee;
+        }
+    }
 
-        .col-3 {
-            width: 100%;
-            max-width: 33.333%;
-            flex: 0 0 33.3333%;
+    .banner-2 {
+        .collection-content {
+            padding: 27px 25px 36px;
+
+            .title {
+                font-size: 18px;
+            }
+
+            .summary {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .banner-tiles2 {
+        .desktop {
+            display: block;
         }
 
-        .col {
-            max-width: 50%;
-            width: 100%;
-            margin: 0;
-        }
+        .col-content {
+            .title {
+                font-size: @size-32;
+                margin-bottom: 42px;
+            }
 
-        .furniture-blog {
-            padding: 0 10px;
-            margin-bottom: 28px;
-
-            .blog-content {
-                .title {
-                    text-align: left;
-                    font-size: @size-18;
-                }
-
-                .summary {
+            button {
+                &.standard-button-black {
+                    padding: 10px 20px;
                     font-size: @size-13;
                 }
             }
         }
+    }
+
+    .our-blog {
+        .desktop {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .blog-border {
+            font-size: @size-20;
+
+            &:before {
+                width: 40%;
+                top: 13px;
+            }
+
+            &:after {
+                width: 40%;
+                top: 13px;
+            }
+        }
+
+        .row {
+            flex-wrap: wrap;
+            display: flex;
+
+            .col-3 {
+                width: 100%;
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
 
 
+
+            .blog-main {
+                margin-top: 38px;
+
+                .blog-content {
+                    margin: 15px 0;
+                }
+            }
+
+            .furniture-blog {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                padding: 0 10px;
+                margin-bottom:28px;
+
+                .blog-content {
+                    font-size: @size-24;
+
+                    .title {
+                        text-align: left;
+                        font-size: @size-18;
+                        padding: 14px 0 19px;
+                    }
+
+                    .summary {
+                        padding: 12px 0 13px;
+                        font-size: @size-13;
+                        // padding: 12px 0 19px;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+
+    .testimonial-blog {
+        margin-top: 32px;
+
+        .row {
+            flex-wrap: wrap;
+            display: flex;
+
+            .col {
+                float: left;
+                max-width: 50%;
+                width: 100%;
+                margin: 0;
+                flex: 0 0 50%;
+            }
+
+            &:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+        }
+
+        .desktop {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .blog-border {
+            &:before {
+                width: 30%;
+                top: 14px;
+            }
+
+            &:after {
+                width: 30%;
+                top: 14px;
+            }
+        }
+
+        .testi-main {
+            margin-top: 24px;
+            margin-bottom: 13px;
+
+            .testimonial {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+    button {
+        &.standard-button-black {
+            background: @color-black2d;
+            padding: 14px 30px;
+            font-family: @font-roboto-bold;
+        }
+
+    }
+
+    .banner {
+        .banner_content {
+            margin-top: 40px;
+
+            .title {
+                font-size: @size-160;
+            }
+
+            .summary {
+                margin: 2.2em 0 0.8em;
+                font-size: @size-32;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    .banner-2 {
+        .collection-content {
+            .title {
+                font-size: @size-24;
+            }
+
+            .summary {
+                font-size: @size-13;
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+            font-size: @size-32;
+        }
+
+        .blog-main {
+            margin-top: 38px;
+
+            .furniture-blog {
+                .blog-content {
+                    .title {
+                        padding-top: 12px;
+                        padding: 0;
+                    }
+
+                    .summary {
+                        padding-bottom: 17px;
+                    }
+                }
+            }
+        }
+
+        .row {
+            flex-wrap: wrap;
+            display: flex;
+
+            .col-3 {
+                width: 100%;
+                max-width: 33.333%;
+                flex: 0 0 33.333%;
+            }
+
+            .col {
+                max-width: 50%;
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+
+    .testimonial-blog {
+        .testi-main {
+            .testimonial {
+                padding: 35px 38px;
+            }
+        }
     }
 
 
 }
 
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
-
-    .banner-top {
-        overflow: hidden;
-    }
-
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
     .banner {
         .banner_content {
             .title {
@@ -328,18 +915,68 @@
             }
 
             .summary {
+                margin: 1.2em 0 1em;
+                letter-spacing: 1px;
+                word-spacing: 5px;
                 font-size: @size-32;
                 line-height: 1;
-                margin-left: 7px;
+                // margin-left: 7px;
             }
         }
     }
 
-    .tiles_content {
-        .title {
-            font-size: @size-42;
+    .tiles {
+        .tiles_content {
+            .title {
+                font-size: @size-42;
+                margin-bottom: 28px;
+            }
+
+        }
+    }
+
+    .banner-tiles2 {
+        .col-content {
+            .title {
+                font-size: @size-52;
+                margin-bottom: 42px;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 14px 30px;
+                }
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+            &:before {
+                width: 40%;
+                top: 13px;
+            }
+
+            &:after {
+                width: 40%;
+                top: 13px;
+            }
         }
 
+    }
+
+    .testimonial-blog {
+        .blog-border {
+            &:before {
+                width: 34%;
+                top: 14px;
+            }
+
+            &:after {
+                width: 34%;
+                top: 14px;
+            }
+        }
     }
 
 }
