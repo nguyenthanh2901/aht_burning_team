@@ -1,8 +1,178 @@
-//
-//  Common
-//  _____________________________________________
+.a() {
+    font-size: @size-13;
+    color: @color-black3;
+    text-decoration: underline;
+}
 
-& when (@media-common = true) {
+.blogBorder() {
+    text-transform: capitalize;
+    // font-size: @size-32;
+    text-align: center;
+}
+
+& when (@media-common =true) {
+   
+
+
+    .page-main {
+        margin: 0 10px;
+    }
+
+    button {
+        &.standard-button-black {
+            background: @color-black2d;
+            padding: 10px 20px;
+            font-family: @font-roboto-bold;
+        }
+
+    }
+
+    .button-icon {
+        padding-left: 5px;
+        font-size: @size-20;
+    }
+
+   
+
+
+    // BANNER
+    .banner-top {
+        overflow: hidden;
+
+        .banner {
+            p {
+                margin: 0;
+            }
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .banner_content {
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+
+                .title {
+                    font-family: @font-market-re;
+                    font-weight: bold;
+                    color: @color-white;
+                    text-align: center;
+                }
+
+                .summary {
+                    // font-size: @size-20;
+                    color: @color-whitef;
+                    font-family: @font-lora-re;
+
+                }
+
+                a {
+                    font-family: @font-openSans-bold;
+                }
+
+            }
+        }
+    }
+
+
+    .reason-carosel {
+        overflow: hidden;
+        text-transform: uppercase;
+        text-align: center;
+        background: @color-black2d;
+        color: @color-white;
+        padding: 9px;
+        font-size: @size-13;
+
+        a {
+            color: @color-whitef;
+            margin-left: -1.2em;
+            word-spacing: 2px;
+        }
+    }
+
+    .col-content {
+        p {
+            margin: 0;
+        }
+        .title {
+            font-family: @font-lora-bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: @color-white;
+            text-align: center;
+        }
+    }
+
+    .banner-2 {
+        background: @color-whitee;
+        p {
+            margin: 0;
+        }
+        .collection-content {
+            text-align: Center;
+
+            .title {
+                font-size: @size-24;
+                color: @color-black2;
+                text-transform: capitalize;
+                font-family: @font-lora-re;
+                text-align: center;
+            }
+
+            .summary {
+                padding: 10px 2px 16px;
+                font-size: @size-14;
+            }
+
+            button {
+                &.standard-button-black {
+                    background: @color-whitee;
+                    border: 1px solid @color-black;
+                    color: @color-black;
+                    font-size: @size-13;
+                    padding: 9px 22px;
+                }
+            }
+        }
+    }
+
+    .banner-tiles2 {
+        .col-content {
+            p {
+                margin: 0;
+            }
+            .title {
+                font-family: @font-lora-re;
+                color: @color-white;
+                text-align: center;
+                font-size: @size-52;
+                margin-bottom: 42px;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 14px 28px;
+                    font-size: @size-13;
+                }
+            }
+        }
+        .tiles-video {
+            width: 610px;
+            height: 437px;
+            iframe{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+
     .section-new-seller,
     .section-new-arrivals {
        .title {
@@ -127,21 +297,244 @@
             }
         }
     }
+    //FURNITURE BLOG
+    .our-blog {
+        position: relative;
+        font-family: @font-lora-re;
+
+        .blog-border {
+            .blogBorder();
+
+            &:before {
+                content: '';
+                border-bottom: 1px solid @color-grayc;
+                position: absolute;
+                left: 0;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                border-bottom: 1px solid @color-grayc;
+            }
+        }
+
+        .blog-content {
+            p {
+                margin: 0;
+            }
+            .title {
+                color: @color-black2;
+                font-family: @font-lora-re;
+                text-align: center;
+            }
+
+            .summary {
+                // padding: 12px 0 13px;
+                color: @color-black3;
+                font-family: @font-roboto-re;
+
+            }
+
+            a {
+                .a();
+            }
+        }
+    }
+
+    //TESTIMONIAL
+    .testimonial-blog {
+
+        position: relative;
+        text-align: center;
+        
+        .blog-border {
+            .blogBorder();
+
+            &:before {
+                content: '';
+                position: absolute;
+                border-bottom: 1px solid @color-grayc;
+                left: 0;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                border-bottom: 1px solid @color-grayc;
+            }
+        }
+
+        .testi-main {
+
+            .testimonial {
+                font-family: @font-roboto-re;
+                font-size: @size-13;
+                text-align: left;
+                border: 1px solid #ccc;
+                text-transform: capitalize;
+
+                a {
+                    .a();
+                }
+
+                .testi-content {
+                    margin-top: 23px;
+                    line-height: 1.2;
+                }
+
+                .testi-name {
+                    font-weight: 700;
+                }
+            }
+
+            button {
+                &.standard-button-black {
+                    font-size: @size-13;
+                    color: @color-black2d;
+                }
+            }
+        }
+
+    }
 }
 
-//
-//  Mobile @screen__xxs
-//  320 -> ...
-//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xxs) {
+    .tiles {
+        .col-content {
+            button {
+                &.standard-button-black {
+                    font-size: @size-13;
+                    padding: 4px 19px;
+                }
+            }
+        }
+    }
 
-.media-width(@extremum, @break) when (@extremum ='max') and (@break = @screen__xxs) {}
+    button {
+        &.standard-button-black {
+            font-size: @size-10;
+        }
+    }
 
-//
-//  Mobile @screen__xs
-//  480 -> ...
-//  _____________________________________________
+    .reason-carosel {
+        padding: 5px;
 
-.media-width(@extremum, @break) when (@extremum ='max') and (@break = @screen__xs) {
+        a {
+            font-size: @size-9;
+        }
+    }
+
+    .banner-2 {
+        .collection-content {
+            padding: 16px 5px;
+
+            .summary {
+                font-size: @size-12;
+            }
+        }
+    }
+
+    .testimonial-blog {
+        .testi-main {
+            .testimonial {
+                font-size: @size-11;
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+            font-size: @size-18;
+
+        }
+
+        .blog-content {
+            .summary {
+                font-size: @size-11;
+            }
+        }
+
+    }
+
+    .testimonial-blog {
+        .testi-main {
+            .testimonial {
+                padding: 15px;
+            }
+        }
+
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__380) {
+
+    .banner {
+        .banner_content {
+            margin: 0;
+
+            .title {
+                font-size: @size-50;
+            }
+
+            .summary {
+                font-size: @size-15;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 8px 16px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+
+            &:before {
+                width: 25%;
+                top: 13px;
+            }
+
+            &:after {
+                width: 25%;
+                top: 13px;
+            }
+        }
+
+    }
+
+    .testimonial-blog {
+        .blog-border {
+            &:before {
+                width: 10%;
+                top: 10px;
+            }
+
+            &:after {
+                top: 10px;
+                width: 10%;
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .banner {
+        .banner_content {
+
+            .title {
+                font-size: @size-60;
+            }
+
+        }
+    }
     .page-main {
         padding-left: 10px;
         padding-right: 10px;
@@ -496,27 +889,456 @@
     }
 }
 
-//
-//  Mobile @screen__s
-//  640 -> ...
-//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .desktop {
+        display: none;
+    }
 
-.media-width(@extremum, @break) when (@extremum ='min') and (@break = @screen__s) {}
+    .mobile {
+        display: block;
+    }
 
-//
-//  Mobile @screen__m
-//  768 -> ...
-//  _____________________________________________
+    button {
+        &.standard-button-black {
+            font-size: @size-13;
+        }
+    }
 
-.media-width(@extremum, @break) when (@extremum ='min') and (@break = @screen__m) {}
+    .page-main {
+        padding: 0;
+    }
 
-//
-//  Mobile @screen__l
-//  1024 -> ...
-//  _______________________________________
+    .banner {
+        .banner_content {
+            margin-left: 10px;
 
-.media-width(@extremum, @break) when (@extremum='min') and (@break = @screen__l) {
+            .title {
+                font-size: @size-80;
+            }
 
+            .summary {
+                font-size: @size-22;
+                margin: 2.2em 0 1em;
+                letter-spacing: 0;
+                word-spacing: 0;
+            }
+
+            button {
+                &.standard-button-black {
+                    font-size: @size-13;
+                    padding: 9px 22px;
+                    margin-left: -20px;
+                }
+            }
+        }
+    }
+
+    .row {
+        margin: 0;
+        flex-direction: column;
+
+        .col {
+            margin: 6px 0 1px;
+        }
+    }
+
+    .tiles {
+
+        // margin:6px 0;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col-content {
+            margin-top: -7px;
+
+            .title {
+                font-size: @size-25;
+                margin-bottom: 18px;
+                letter-spacing: normal;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 9px 14px;
+                }
+            }
+        }
+    }
+
+    .banner-tiles2 {
+        .desktop {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .reason-carosel {
+        margin: 2px 0 3px;
+        font: @size-12;
+    }
+
+    .banner-2 {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .collection-content {
+            // padding: 27px 5px 33px;
+            padding: 25px 10px 30px;
+            // margin-bottom: 5px;
+            margin-bottom: 7px;
+        }
+    }
+
+    .our-blog {
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
+
+        .blog-border {
+            font-size: @size-22;
+
+            &:before {
+                width: 27%;
+                top: 11px;
+            }
+
+            &:after {
+                width: 27%;
+                top: 11px;
+            }
+        }
+
+        .blog-main {
+            margin-top: 24px;
+
+            .furniture-blog {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .blog-content {
+                    margin: 10px 0 17px;
+
+                    .title {
+                        text-align: left;
+                        font-size: @size-18;
+                    }
+
+                    .summary {
+                        font-size: @size-13;
+                        padding-top: 13px;
+                        padding-bottom: 19px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .testimonial-blog {
+        margin-top: 24px;
+
+        .blog-border {
+            font-size: @size-22;
+
+            &:before {
+                width: 11%;
+                top: 10px;
+            }
+
+            &:after {
+                top: 10px;
+                width: 11%;
+            }
+        }
+
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
+
+        .testi-main {
+            margin-top: 20px;
+            margin-bottom: 13px;
+
+            .testimonial {
+                padding: 26px 28px;
+                margin: 10px 0 11px;
+            }
+        }
+
+        button {
+            &.standard-button {
+                width: 100%;
+                // font-size:@size-13;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    button {
+        &.standard-button-black {
+            font-size: @size-15;
+        }
+
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .banner {
+        .banner_content {
+            .title {
+                font-size: @size-80;
+            }
+
+            .summary {
+                margin: 1.2em 0 1em;
+                font-size: @size-18;
+            }
+        }
+    }
+
+    .tiles {
+        margin-bottom: 13px;
+
+        .col-content {
+            .title {
+                font-size: @size-28;
+                margin-bottom: 30px;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    .reason-carosel {
+        p {
+            border-right: 1px solid @color-whitee;
+        }
+    }
+
+    .banner-2 {
+        .collection-content {
+            padding: 27px 25px 36px;
+
+            .title {
+                font-size: 18px;
+            }
+
+            .summary {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .banner-tiles2 {
+        .desktop {
+            display: block;
+        }
+
+        .col-content {
+            .title {
+                font-size: @size-32;
+                margin-bottom: 42px;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 10px 20px;
+                    font-size: @size-13;
+                }
+            }
+        }
+    }
+
+    .our-blog {
+        .desktop {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .blog-border {
+            font-size: @size-20;
+
+            &:before {
+                width: 40%;
+                top: 13px;
+            }
+
+            &:after {
+                width: 40%;
+                top: 13px;
+            }
+        }
+
+        .row {
+            flex-wrap: wrap;
+            display: flex;
+
+            .col-3 {
+                width: 100%;
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+
+
+
+            .blog-main {
+                margin-top: 38px;
+
+                .blog-content {
+                    margin: 15px 0;
+                }
+            }
+
+            .furniture-blog {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                padding: 0 10px;
+                margin-bottom:28px;
+
+                .blog-content {
+                    font-size: @size-24;
+
+                    .title {
+                        text-align: left;
+                        font-size: @size-18;
+                        padding: 14px 0 19px;
+                    }
+
+                    .summary {
+                        padding: 12px 0 13px;
+                        font-size: @size-13;
+                        // padding: 12px 0 19px;
+                    }
+
+                }
+            }
+
+
+        }
+    }
+
+    .testimonial-blog {
+        margin-top: 32px;
+
+        .row {
+            flex-wrap: wrap;
+            display: flex;
+
+            .col {
+                float: left;
+                max-width: 50%;
+                width: 100%;
+                margin: 0;
+                flex: 0 0 50%;
+            }
+
+            &:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+        }
+
+        .desktop {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .blog-border {
+            &:before {
+                width: 30%;
+                top: 14px;
+            }
+
+            &:after {
+                width: 30%;
+                top: 14px;
+            }
+        }
+
+        .testi-main {
+            margin-top: 24px;
+            margin-bottom: 13px;
+
+            .testimonial {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+    button {
+        &.standard-button-black {
+            background: @color-black2d;
+            padding: 14px 30px;
+            font-family: @font-roboto-bold;
+        }
+
+    }
+
+    .banner {
+        .banner_content {
+            margin-top: 40px;
+
+            .title {
+                font-size: @size-160;
+            }
+
+            .summary {
+                margin: 2.2em 0 0.8em;
+                font-size: @size-32;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    .banner-2 {
+        .collection-content {
+            .title {
+                font-size: @size-24;
+            }
+
+            .summary {
+                font-size: @size-13;
+            }
+        }
+    }
     .section-new-seller,
     .section-new-arrivals {
         .title {
@@ -800,4 +1622,131 @@
             }
         }
     }
+    .our-blog {
+        .blog-border {
+            font-size: @size-32;
+        }
+
+        .blog-main {
+            margin-top: 38px;
+
+            .furniture-blog {
+                .blog-content {
+                    .title {
+                        padding-top: 12px;
+                        padding: 0;
+                    }
+
+                    .summary {
+                        padding-bottom: 17px;
+                    }
+                }
+            }
+        }
+
+        .row {
+            flex-wrap: wrap;
+            display: flex;
+
+            .col-3 {
+                width: 100%;
+                max-width: 33.333%;
+                flex: 0 0 33.333%;
+            }
+
+            .col {
+                max-width: 50%;
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+
+    .testimonial-blog {
+        .testi-main {
+            .testimonial {
+                padding: 35px 38px;
+            }
+        }
+    }
+
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
+    .banner {
+        .banner_content {
+            .title {
+                font-size: @size-200;
+                margin-left: -23px;
+                font-weight: bold;
+                margin-top: 25px;
+                line-height: 0.75;
+            }
+
+            .summary {
+                margin: 1.2em 0 1em;
+                letter-spacing: 1px;
+                word-spacing: 5px;
+                font-size: @size-32;
+                line-height: 1;
+                // margin-left: 7px;
+            }
+        }
+    }
+
+    .tiles {
+        .tiles_content {
+            .title {
+                font-size: @size-42;
+                margin-bottom: 28px;
+            }
+
+        }
+    }
+
+    .banner-tiles2 {
+        .col-content {
+            .title {
+                font-size: @size-52;
+                margin-bottom: 42px;
+            }
+
+            button {
+                &.standard-button-black {
+                    padding: 14px 30px;
+                }
+            }
+        }
+    }
+
+    .our-blog {
+        .blog-border {
+            &:before {
+                width: 40%;
+                top: 13px;
+            }
+
+            &:after {
+                width: 40%;
+                top: 13px;
+            }
+        }
+
+    }
+
+    .testimonial-blog {
+        .blog-border {
+            &:before {
+                width: 34%;
+                top: 14px;
+            }
+
+            &:after {
+                width: 34%;
+                top: 14px;
+            }
+        }
+    }
+
 }

@@ -8,19 +8,9 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="test" remove="true" />
-        <referenceContainer name="product.info.stock.sku" remove="true"/>
-        <referenceBlock name="product.info.review" remove="true" />
-        <referenceContainer name="product.info.social" remove="true"/>
-        <move element="page.main.title" destination="product.info.main" before="-"/>
-
-        <referenceContainer name="product.info.main">
-            <block class="Magento\Catalog\Block\Product\View\Description" name="product.detail.custom.accordion" as="detail_custom_accordion" template="Magento_Catalog::product/view/product_detail_accordion.phtml" after="-" />
-        </referenceContainer>
-
-        <!-- <referenceContainer name="content">
-            <container name="section.detail.product" htmlTag="div" htmlClass="detail-description-product" after="product.info.media">
-                <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.info.detail.custom" as="detail_custom" template="Magento_Catalog::product/view/attributes_custom.phtml" before="-" />        
-            </container>
-        </referenceContainer> -->
+       <referenceContainer name="product.info.stock.sku" remove="true"/>
+       <referenceBlock name="product.info.review" remove="true" />
+       <referenceContainer name="product.info.social" remove="true"/>
+       <move element="page.main.title" destination="product.info.main" before="-"/>
     </body>
 </page>
