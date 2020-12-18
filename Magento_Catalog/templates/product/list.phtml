@@ -65,33 +65,43 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                 <?= $productImage->toHtml() ?>
                             </a>
                             <?php
-                            $saleOrPreOrder = $_product->getResource()->getAttribute('sale_or_preOrder')->getFrontend()->getValue($_product);
+                            $saleOrPreOrder = $_product->getResource()->getAttribute('sale_or_preOrder');
                             $class = "";
-                            if ($saleOrPreOrder === 'Sale') {
-                                $class = 'sale-label';
-                            } else if (
-                                $saleOrPreOrder === 'Pre Order'
-                            ) {
-                                $class = 'pre-order-label';
+                            if ($saleOrPreOrder) {
+                                $saleOrPreOrderValue = $saleOrPreOrder->getFrontend()->getValue($_product);
+                                if ($saleOrPreOrder === 'Sale') {
+                                    $class = 'sale-label';
+                                } else if (
+                                    $saleOrPreOrder === 'Pre Order'
+                                ) {
+                                    $class = 'pre-order-label';
+                                }
+                                echo "<div class=$class>" . $saleOrPreOrderValue . "</div>";
                             }
-                            echo "<div class=$class>" . $saleOrPreOrder . "</div>";
                             ?>
                             <div class="additional_attr">
                                 <?php
-                                $brand_attribute = $_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product);
+                                $brand_attribute = $_product->getResource()->getAttribute('brand');
                                 if ($brand_attribute) {
-                                    $encode = htmlspecialchars($brand_attribute);
-                                    // $encode = explode('&quot', $encode);
-                                    $encode = explode('&quot', $encode)[1];
-                                    $encode = explode('quot;', $encode)[1];
-                                    $encode = explode('&', $encode)[0];
-                                    $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
-                                    echo "<img src=$srcImg alt='brand' />";
-                                } else {
-                                    echo "<img />";
+                                    $brand_attribute = $brand_attribute->getFrontend()->getValue($_product);
+                                    if (empty($brand_attribute)) {
+                                        echo "<img />";
+                                    } else {
+                                        $encode = htmlspecialchars($brand_attribute);
+                                        // $encode = explode('&quot', $encode);
+                                        $encode = explode('&quot', $encode)[1];
+                                        $encode = explode('quot;', $encode)[1];
+                                        $encode = explode('&', $encode)[0];
+                                        $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
+                                        echo "<img src=$srcImg alt='brand' />";
+                                    }
                                 }
-                                echo "<p>"
-                                    . $_product->getResource()->getAttribute('color_additional_info')->getFrontend()->getValue($_product) . "</p>"
+                                $colorAttr = $_product->getResource()->getAttribute('color_additional_info');
+                                if ($colorAttr) {
+                                    $colorValue = $colorAttr->getFrontend()->getValue($_product);
+                                    echo "<p>"
+                                        . $colorValue . "</p>";
+                                }
                                 ?>
                             </div>
                             <div class="product details product-item-details">
