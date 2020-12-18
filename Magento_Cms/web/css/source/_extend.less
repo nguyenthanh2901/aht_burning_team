@@ -12,7 +12,18 @@
 
 & when (@media-common =true) {
 
-
+    //added
+    .section-outdoor-inspiration .title p:nth-child(1) {
+        background-color: #fff;
+        margin-left: -1px;
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 22px;
+        line-height: 24px;
+        color: #2d2d2d;
+        font-weight: 400;
+        font-family: "Lora-Regular";
+    }
 
     .page-main {
         margin: 0 10px;
@@ -308,14 +319,13 @@
 
             p {
                 // width: 100%;
-                // margin: 0 auto;
                 // border: 2px solid @color-black;
-                width: 360px;
+                // width: 360px;
                 border: 2px solid #3b3b3e;
                 box-sizing: border-box;
                 margin-left: 0;
                 height: 36px;
-                margin-bottom: 0;
+                margin: 0 auto;
 
                 a {
                     font-size: 13px;
@@ -450,6 +460,7 @@
         }
 
     }
+
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xxs) {
@@ -521,7 +532,19 @@
 
 }
 
+
+
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__380) {
+
+    //ADDED
+    .section-outdoor-inspiration .title::after {
+        display: none;
+    }
+
+    //added
+    .testimonial-blog button.standard-button {
+        width: 100%;
+    }
 
     .banner {
         .banner_content {
@@ -542,6 +565,10 @@
                 }
             }
         }
+    }
+
+    .section-outdoor-inspiration .button-view-our p {
+        width: 100%;
     }
 
     .our-blog {
@@ -967,6 +994,7 @@
 
             p {
                 height: 30px;
+                width: 360px;
                 line-height: 31px;
                 margin-left: -2px;
             }
@@ -977,6 +1005,13 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+
+    //added
+    .testimonial-blog button.standard-button,
+    .section-outdoor-inspiration .button-view-our p {
+        width: 360px;
+    }
+
     .desktop {
         display: none;
     }
@@ -1212,6 +1247,20 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+    //added
+    .testimonial-blog button.standard-button,
+    .section-outdoor-inspiration .button-view-our p {
+        width: 360px;
+    }
+
+    .section-outdoor-inspiration .title {
+        text-align: center;
+    }
+
+    // end added
+
+
     button {
         &.standard-button-black {
             font-size: @size-15;
@@ -1303,6 +1352,7 @@
 
         .blog-border {
             font-size: @size-20;
+            margin-top: 20px;
 
             &:before {
                 width: 40%;
@@ -1761,6 +1811,7 @@
     .our-blog {
         .blog-border {
             font-size: @size-32;
+            margin-top: 20px;
         }
 
         .blog-main {
