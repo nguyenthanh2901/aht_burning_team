@@ -59,6 +59,35 @@
             }
         }
     }
+
+    //
+    //MAIN BANNER
+    //
+    .main-banner-container {
+        position: relative;
+
+        .main-banner-content {
+            position: absolute;
+            top: 47.2%;
+            left: 3.3%;
+            transform: translateY(-53%);
+
+            >:first-child {
+                font-size: 7vw;
+                line-height: 0;
+                color: #ffffff;
+                font-family: "Sun Valley";
+            }
+
+            >p {
+                max-width: 499px;
+                height: 35px;
+                font-size: 15px;
+                line-height: 22px;
+                color: #ffffff;
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
@@ -197,6 +226,12 @@
     }
 }
 
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .main-banner-container .main-banner-content>p {
+        display: none;
+    }
+}
+
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .page-layout-1column .main div.product-info-main {
         width: 100%;
@@ -207,12 +242,68 @@
     }
 }
 
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+
+    //MAIN BANNER
+    .main-banner-container .main-banner-content {
+        transform: translateY(0);
+    }
+}
+
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+    //
+    // CATEGORY INFO
+    //
+    .category-description {
+        margin-top: 56px;
+        margin-bottom: 72px;
+
+        >:first-child {
+            margin-bottom: 7px;
+        }
+
+        >p {
+            font-size: 13px;
+            line-height: 20px;
+            color: #222222;
+            margin-bottom: 20px;
+        }
+    }
+
     .page-layout-1column .main div.product-info-main {
         width: 33.57%;
     }
 
     .page-layout-1column .main div.product.media {
         width: 64.52%;
+    }
+
+    //
+    //MAIN BANNER
+    //
+    .main-banner-container {
+        position: relative;
+
+        .main-banner-content {
+            position: absolute;
+            top: 47.2%;
+            left: 3.3%;
+
+            >:first-child {
+                font-size: 72px;
+                line-height: 42px;
+                color: #ffffff;
+                font-family: "Sun Valley";
+            }
+
+            >p {
+                max-width: 499px;
+                height: 35px;
+                font-size: 15px;
+                line-height: 22px;
+                color: #ffffff;
+            }
+        }
     }
 }

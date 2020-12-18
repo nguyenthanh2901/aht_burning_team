@@ -3,6 +3,30 @@
 
 & when (@media-common=true) {
 
+    //
+    //BREADCRUMBS
+    //
+    .page-wrapper {
+        >.breadcrumbs {
+            margin-top: 12px;
+            margin-bottom: 12px;
+
+            .item {
+                font-size: 12px;
+                line-height: 24px;
+                color: #333333;
+                font-weight: 400;
+            }
+        }
+
+    }
+
+    .breadcrumbs .item:not(:last-child):after {
+        content: '\2044';
+        margin: 0 6px;
+        font-size: 32px;
+    }
+
     .page-header {
         border-bottom: 0;
 
@@ -240,7 +264,7 @@
                 }
             }
 
-            
+
         }
 
         .header-top-desktop-left {
@@ -625,6 +649,7 @@
             &.active .footer-middle-header>:first-child:after {
                 content: '\2014';
             }
+
             .trigger {
                 >:first-child {
                     font-size: @font-size18;
@@ -734,6 +759,9 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+
+
     .page-header .panel.header {
         padding: 0;
         align-items: center;

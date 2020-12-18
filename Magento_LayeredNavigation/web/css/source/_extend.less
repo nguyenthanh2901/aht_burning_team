@@ -1,4 +1,5 @@
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+// .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+& when (@media-common =true) {
     .block-subtitle {
         display: none;
     }
@@ -6,9 +7,16 @@
     .filter-container {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
     }
 
     .block.filter {
+        margin-bottom: 27px;
+
+        .filter-title {
+            display: none;
+        }
+
         .filter-options {
             display: flex;
             flex-wrap: wrap;
@@ -65,5 +73,14 @@
         .filter-options-item {
             position: relative;
         }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .filter-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 14px;
     }
 }

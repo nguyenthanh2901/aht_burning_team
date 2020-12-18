@@ -1,0 +1,13 @@
+<div class="main-banner-bg">
+    <?= $block->getLayout()
+        ->createBlock("Magento\Cms\Block\Block")
+        ->setBlockId("main-banner-bg")
+        ->toHtml() ?>
+</div>
+
+<div class="main-banner-content">
+    <?= $block->getLayout()
+        ->createBlock("Magento\Cms\BLock\Block")
+        ->setBlockId('main-banner-content')
+        ->toHtml() ?>
+</div>

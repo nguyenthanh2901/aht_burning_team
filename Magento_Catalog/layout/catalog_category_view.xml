@@ -9,20 +9,30 @@
     <body>
         <move element="product_list_toolbar" destination="filter-container" />
         <move element="catalog.leftnav" destination="filter-container" before='-' />
+        <move element='category.view.container' destination="content" after='-' />
+        <referenceBlock name="page.main.title" />            
+        <referenceContainer name="columns.top">
+            <container name="category.view.container" htmlTag="div" htmlClass="category-view" after="-">
+                <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"/>
+                <block class="Magento\Catalog\Block\Category\View" name="category.description" template="Magento_Catalog::category/description.phtml"/>
+                <block class="Magento\Catalog\Block\Category\View" name="category.cms" template="Magento_Catalog::category/cms.phtml"/>
+            </container>
+        </referenceContainer>
         <referenceContainer name="content">
-            <container name='filter-container' htmlTag="div" htmlClass="filter-container" before='-' />
+            <container name="main-banner-container" label="Main Banner"  htmlTag="div"  htmlClass="main-banner-container" before='filter-container'>
+                <block class="Magento\Framework\View\Element\Template" name="main.banner" template="Magento_Catalog::main_banner.phtml"/>
+            </container>
+            <container name="filter-container" label="Filter Container" htmlTag="div" htmlClass="filter-container" before='-'/>
             <block class="Magento\Catalog\Block\Category\View" name="category.products" template="Magento_Catalog::category/products.phtml">
                 <block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="product_list" template="Magento_Catalog::product/list.phtml">
-                    <container name="category.product.list.additional" as="additional" />
                     <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Magento_Catalog::product/list/toolbar.phtml">
                         <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager"/>
                     </block>
-                    <!-- <action method="setToolbarBlockName">
+                     <action method="setToolbarBlockName">
                         <argument name="name" xsi:type="string">product_list_toolbar</argument>
-                    </action> -->
+                    </action>
                 </block>
             </block>
-            
         </referenceContainer>
     </body>
 </page>
