@@ -11,9 +11,6 @@
 }
 
 & when (@media-common =true) {
-   
-
-
     .page-main {
         margin: 0 10px;
     }
@@ -31,9 +28,6 @@
         padding-left: 5px;
         font-size: @size-20;
     }
-
-   
-
 
     // BANNER
     .banner-top {
@@ -207,8 +201,7 @@
                 background-color: @color-white;
                 &::before {
                     color: @color-black;
-                    margin-left: 13px;
-                    font-size: 2.5em;
+                    font-size: 3.5rem;
                     position: relative;
                     top: -4px;
                 }
@@ -219,7 +212,6 @@
                 top: 129px;
                 &::before {
                     content: "\2039";
-                    margin-left: 13px !important;
                 }
             }
 
@@ -228,7 +220,7 @@
                 top: 129px;
                 &::before {
                     content: "\203A";
-                    margin-left: 15px;
+                    margin-left: 3px;
                 }
             }
 
@@ -297,6 +289,7 @@
             }
         }
     }
+
     //FURNITURE BLOG
     .our-blog {
         position: relative;
@@ -521,6 +514,33 @@
                 width: 10%;
             }
         }
+    }
+
+    .section-detail-accordion { 
+        .product-detail-ads {
+            .product-ads-flex {
+                display: grid;
+                justify-content: center;
+            }
+
+            .product-ads-bottom {
+                p {
+                    &:nth-child(3) {
+                        top: 45%;
+                    }
+                }
+            }
+        }
+    }
+
+    .product-info-main {
+        .product.attribute.overview {
+            margin-top: 35px !important;
+        }
+    }
+
+    .product.info.detailed {
+        margin-top: 20px;
     }
 
 }
@@ -887,6 +907,22 @@
             }
         }
     }
+
+    .product-info-main {
+        .product.attribute.overview {
+            margin-top: 35px;
+        }
+
+        .product-ads-bottom {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .product.info.detailed {
+        margin-top: 20px;
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
@@ -1087,6 +1123,14 @@
             &.standard-button {
                 width: 100%;
                 // font-size:@size-13;
+            }
+        }
+    }
+
+    .product-detail-ads {
+        .product-ads-bottom {
+            img {
+                width: 100%;
             }
         }
     }
@@ -1589,7 +1633,7 @@
                     &::before {
                         color: @color-black;
                         margin-left: 13px;
-                        font-size: 2.5em;
+                        font-size: 3.5rem;
                         position: relative;
                         top: -4px;
                     }
@@ -1600,6 +1644,7 @@
                     top: 115px;
                     &::before {
                         content: "\2039";
+                        margin-left: 0px;
                     }
                 }
     
@@ -1608,13 +1653,19 @@
                     top: 115px;
                     &::before {
                         content: "\203A";
+                        margin-left: 3px;
                     }
+                }
+
+                .slick-dots {
+                    display: none !important;
                 }
             }
         }
 
         .button-view-our {
             margin-top: -20px;
+            margin-bottom: 30px;
             p {
                 width: 14%;
                 height: 32px;
