@@ -65,21 +65,25 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                 <?= $productImage->toHtml() ?>
                             </a>
                             <?php
-                            $saleOrPreOrder = $_product->getResource()->getAttribute('sale_or_preOrder')->getFrontend()->getValue($_product);
+                            $saleOrPreOrder = $_product->getResource()->getAttribute('sale_or_preOrder');
                             $class = "";
-                            if ($saleOrPreOrder === 'Sale') {
-                                $class = 'sale-label';
-                            } else if (
-                                $saleOrPreOrder === 'Pre Order'
-                            ) {
-                                $class = 'pre-order-label';
+                            if($saleOrPreOrder) {
+                                $saleOrPreOrder = $saleOrPreOrder->getFrontend()->getValue($_product);
+                                if ($saleOrPreOrder === 'Sale') {
+                                    $class = 'sale-label';
+                                } else if (
+                                    $saleOrPreOrder === 'Pre Order'
+                                ) {
+                                    $class = 'pre-order-label';
+                                }
+                                echo "<div class=$class>" . $saleOrPreOrder . "</div>";
                             }
-                            echo "<div class=$class>" . $saleOrPreOrder . "</div>";
                             ?>
                             <div class="additional_attr">
                                 <?php
-                                $brand_attribute = $_product->getResource()->getAttribute('brand')->getFrontend()->getValue($_product);
+                                $brand_attribute = $_product->getResource()->getAttribute('brand');
                                 if ($brand_attribute) {
+                                    $brand_attribute = $brand_attribute->getFrontend()->getValue($_product);
                                     $encode = htmlspecialchars($brand_attribute);
                                     // $encode = explode('&quot', $encode);
                                     $encode = explode('&quot', $encode)[1];
@@ -90,8 +94,12 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                 } else {
                                     echo "<img />";
                                 }
-                                echo "<p>"
-                                    . $_product->getResource()->getAttribute('color_additional_info')->getFrontend()->getValue($_product) . "</p>"
+                                $colorAddtional = $_product->getResource()->getAttribute('color_additional_info');
+                                if($colorAddtional) {
+                                    $colorAddtional = $colorAddtional->getFrontend()->getValue($_product);
+                                    echo "<p>"
+                                    . $colorAddtional . "</p>";
+                                }
                                 ?>
                             </div>
                             <div class="product details product-item-details">
