@@ -67,8 +67,8 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                             <?php
                             $saleOrPreOrder = $_product->getResource()->getAttribute('sale_or_preOrder');
                             $class = "";
-                            if($saleOrPreOrder) {
-                                $saleOrPreOrder = $saleOrPreOrder->getFrontend()->getValue($_product);
+                            if ($saleOrPreOrder) {
+                                $saleOrPreOrderValue = $saleOrPreOrder->getFrontend()->getValue($_product);
                                 if ($saleOrPreOrder === 'Sale') {
                                     $class = 'sale-label';
                                 } else if (
@@ -76,7 +76,7 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                 ) {
                                     $class = 'pre-order-label';
                                 }
-                                echo "<div class=$class>" . $saleOrPreOrder . "</div>";
+                                echo "<div class=$class>" . $saleOrPreOrderValue . "</div>";
                             }
                             ?>
                             <div class="additional_attr">
@@ -84,21 +84,23 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                 $brand_attribute = $_product->getResource()->getAttribute('brand');
                                 if ($brand_attribute) {
                                     $brand_attribute = $brand_attribute->getFrontend()->getValue($_product);
-                                    $encode = htmlspecialchars($brand_attribute);
-                                    // $encode = explode('&quot', $encode);
-                                    $encode = explode('&quot', $encode)[1];
-                                    $encode = explode('quot;', $encode)[1];
-                                    $encode = explode('&', $encode)[0];
-                                    $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
-                                    echo "<img src=$srcImg alt='brand' />";
-                                } else {
-                                    echo "<img />";
+                                    if (empty($brand_attribute)) {
+                                        echo "<img />";
+                                    } else {
+                                        $encode = htmlspecialchars($brand_attribute);
+                                        // $encode = explode('&quot', $encode);
+                                        $encode = explode('&quot', $encode)[1];
+                                        $encode = explode('quot;', $encode)[1];
+                                        $encode = explode('&', $encode)[0];
+                                        $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
+                                        echo "<img src=$srcImg alt='brand' />";
+                                    }
                                 }
-                                $colorAddtional = $_product->getResource()->getAttribute('color_additional_info');
-                                if($colorAddtional) {
-                                    $colorAddtional = $colorAddtional->getFrontend()->getValue($_product);
+                                $colorAttr = $_product->getResource()->getAttribute('color_additional_info');
+                                if ($colorAttr) {
+                                    $colorValue = $colorAttr->getFrontend()->getValue($_product);
                                     echo "<p>"
-                                    . $colorAddtional . "</p>";
+                                        . $colorValue . "</p>";
                                 }
                                 ?>
                             </div>

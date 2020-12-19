@@ -17,7 +17,6 @@
         <!-- <referenceBlock name="footer_links" remove='true' /> -->
         <!-- <referenceBlock name="report.bugs" remove='true'/> -->
         <referenceBlock name="footer" remove='true'/>
-        <!-- <referenceBlock name="page.main.title" remove='true' /> -->
         <referenceBlock name="header.panel">
             <block class="Magento\Framework\View\Element\Template" name="header-top" before="-" template="Magento_Theme::header_top.phtml" />
             <block class="Magento\Framework\View\Element\Template" name="header.top.links" after='-'  template="Magento_Theme::header/top/links.phtml" />
