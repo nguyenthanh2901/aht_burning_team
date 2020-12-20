@@ -14,13 +14,12 @@
         <referenceBlock name="header" remove="true" />
         <referenceBlock name="authorization-link" remove='true' />
         <referenceBlock name="header" remove='true' />
-        <!-- <referenceBlock name="footer_links" remove='true' /> -->
-        <!-- <referenceBlock name="report.bugs" remove='true'/> -->
         <referenceBlock name="footer" remove='true'/>
-        <referenceBlock name="header.panel">
+
+        <referenceContainer name="header.panel">
             <block class="Magento\Framework\View\Element\Template" name="header-top" before="-" template="Magento_Theme::header_top.phtml" />
             <block class="Magento\Framework\View\Element\Template" name="header.top.links" after='-'  template="Magento_Theme::header/top/links.phtml" />
-        </referenceBlock>
+        </referenceContainer>
         
         
         <referenceContainer name="footer-container">
