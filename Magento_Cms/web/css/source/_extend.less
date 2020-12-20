@@ -1449,7 +1449,7 @@
         p {
             border-right: 1px solid @color-whitee;
             margin-bottom: 0;
-            padding: 10px 0;
+            padding: 8px 0;
         }
     }
 
@@ -1634,9 +1634,25 @@
         &.standard-button-black {
             background: @color-black2d;
             padding: 14px 30px;
-            font-family: @font-roboto-bold;
+            font-family: "Roboto-Bold";
+            width: 153px;
+            height: 50px;
+            border: 2px solid #ffffff;
+            line-height: 21px;
+            padding: 0;
+            padding-left: 1px;
+            padding-bottom: 2px;
         }
 
+    }
+
+    .tiles .col:nth-child(1) {
+        margin-right: 20px;
+    }
+
+    .row .col .col-content .button-icon {
+        padding-left: 9px;
+        font-size: 23px;
     }
 
     .banner {
@@ -1662,7 +1678,18 @@
             }
 
             .summary {
-                font-size: @size-13;
+                font-size: @size-13+1;
+                width: 340px;
+                line-height: 20px;
+                letter-spacing: .1px;
+                padding-left: 5px;
+            }
+
+            button.standard-button-black {
+                width: 128px;
+                height: 40px;
+                background-color: rgba(45, 45, 47, 0);
+                padding: 0;
             }
         }
     }
@@ -1874,6 +1901,7 @@
     .section-outdoor-inspiration {
         margin-bottom: 53px;
 
+
         .title {
             p {
                 &:nth-child(1) {
@@ -1899,7 +1927,7 @@
             }
 
             &::after {
-                top: -57px;
+                top: -54px;
             }
 
         }
@@ -1972,6 +2000,10 @@
 
             }
         }
+    }
+
+    .reason-carosel {
+        margin-top: 6px;
     }
 
     // added
@@ -2063,8 +2095,12 @@
             margin-bottom: 9px;
 
             .testimonial {
-                padding: 34px 38px;
+                padding: 34px 28px;
                 margin-bottom: 12px;
+            }
+
+            >:nth-child(2n) .testimonial {
+                padding-left: 38px;
             }
         }
     }
@@ -2086,6 +2122,53 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
+    .row .col .col-content {
+        top: 41.9%;
+    }
+
+    // .reason-carosel
+    .reason-carosel {
+        margin-top: 6px;
+        margin-bottom: 20px;
+    }
+
+    .reason-carosel .slick-slide.slick-active {
+        &:nth-child(1) p {
+            margin-left: -13px;
+        }
+
+        &:nth-child(3) p {
+            margin-left: 11px;
+
+            a {
+                letter-spacing: .4px;
+            }
+
+            .button-icon {
+                padding-left: 6px;
+            }
+        }
+    }
+
+    // banner2
+    .banner-2:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    .section-outdoor-inspiration {
+        .slick-list {
+            margin: 0;
+        }
+
+        .slick-slide img {
+            width: 94%;
+        }
+
+        .slick-slide {
+            margin: 0;
+        }
+    }
+
     .banner {
         .banner_content {
             margin: 0;
@@ -2114,7 +2197,6 @@
             .title {
                 font-size: @size-42;
                 margin-top: -12px;
-                margin-bottom: 32px;
 
             }
 
@@ -2122,22 +2204,63 @@
     }
 
     .banner-tiles2 {
+        margin-top: 26px;
+        margin-bottom: 32px;
+
         .col-content {
             .title {
                 font-size: @size-52;
-                margin-bottom: 42px;
-                margin-top: -6px;
+                margin-bottom: 29px;
+                margin-top: -7px;
+                line-height: 42px;
+                color: #ffffff;
+                font-weight: 700;
+                font-family: "Lora-Bold";
+                text-align: center;
+                letter-spacing: .1px;
             }
 
             button {
                 &.standard-button-black {
-                    padding: 14px 30px;
+                    width: 160px;
+                    padding: 0;
+                    padding-bottom: 5px;
+
+                    .button-icon {
+                        padding-left: 11px;
+                    }
                 }
             }
+        }
+
+        .col.tiles-video {
+            margin-left: 20px;
+        }
+    }
+
+    .our-blog .row .col-3 {
+        &:nth-child(3n+1) .furniture-blog {
+            padding-left: 0;
+
+        }
+
+        &:nth-child(3n) .furniture-blog {
+            padding-left: 13px;
         }
     }
 
     .our-blog {
+        .row {
+            .furniture-blog {
+                padding-left: 7px;
+
+                img {
+                    width: 400px;
+                }
+
+            }
+        }
+
         .blog-border {
             &:before {
                 width: 40%;
