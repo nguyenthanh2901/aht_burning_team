@@ -238,8 +238,9 @@
             }
 
             .product-item-details {
+                position: relative;
+                z-index: 99;
                 .price-box {
-                    display: flex;
 
                     .special-price,
                     .old-price {
@@ -507,9 +508,6 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__380) {
-    // .block-search .block-content {
-    //     margin-bottom: -12px !important;
-    // }
 
     //ADDED
     .section-outdoor-inspiration .title::after {
@@ -636,11 +634,6 @@
         }
     }
 
-    // .page-main {
-    //     padding-left: 10px;
-    //     padding-right: 10px;
-    // }
-
     .section-new-seller,
     .section-new-arrivals {
         .block-products-list {
@@ -709,6 +702,7 @@
                             font-weight: 700;
                             line-height: 18px;
                             margin-top: 3px;
+                            width: 177px;
                         }
 
                         .price-box {
@@ -726,7 +720,7 @@
                                 font-size: 20px;
                                 font-weight: 400;
                                 color: @color-very-dark-gray;
-                                letter-spacing: 0.6px;
+                                letter-spacing: 0.1px;
                             }
                         }
 
@@ -734,9 +728,10 @@
                             border-radius: 0px;
                             width: 119px;
                             border: 1px solid @color-black;
-                            margin-top: -14px;
-                            padding-left: 12px;
+                            margin-top: -11px;
+                            padding-left: 16px;
                             height: 35px;
+                            letter-spacing: -0.6px;
                         }
                     }
                 }
@@ -745,7 +740,6 @@
     }
 
     .section-new-seller {
-        // margin-top: 2891px;
 
         .title {
             p {
@@ -834,9 +828,7 @@
                         }
 
                         .price-box {
-                            margin-top: 15px;
-                            display: flex;
-                            margin-left: -1px;
+                            display: grid;
 
                             .special-price,
                             .old-price {
@@ -849,7 +841,7 @@
                                 font-size: 20px;
                                 font-weight: 400;
                                 color: @color-very-dark-gray;
-                                letter-spacing: 0.6px;
+                                letter-spacing: 0.1px;
                             }
                         }
 
@@ -859,7 +851,7 @@
                             border: 1px solid @color-black;
                             padding-left: 17px;
                             height: 35px;
-                            margin-top: -14px;
+                            margin-top: -16px;
                             letter-spacing: 0px;
                             font-size: 13px;
                         }
@@ -887,6 +879,26 @@
         .block-products-list {
             margin-top: 20px;
         }
+
+        .block-products-list {
+            .slick-slide {
+                .product-item {
+                    .product-item-details {
+                        .product-item-name {
+                            margin-top: 7px;
+                        }
+
+                        .product-item-actions {
+                            button {
+                                &.action.tocart.primary {
+                                    margin-top: -16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     //SECTION OUTDOOR-INSPIRATION EDITED
@@ -904,7 +916,7 @@
                 background-color: @color-gray55;
                 z-index: -9;
                 position: relative;
-                top: -70px;
+                top: -69px;
             }
 
             p {
@@ -920,6 +932,7 @@
                     color: #2d2d2d;
                     font-weight: 400;
                     font-family: "Lora-Regular";
+                    margin-top: -43px;
                 }
 
 
