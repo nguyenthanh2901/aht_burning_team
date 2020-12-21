@@ -1842,7 +1842,7 @@
                             font-size: 13px;
                             font-weight: 700;
                             line-height: 18px;
-                            margin-top: 0px;
+                            margin-top: 1px;
                         }
 
                         .price-box {
@@ -1872,7 +1872,6 @@
                             border-radius: 0px;
                             width: 120px;
                             border: 1px solid @color-black;
-                            margin-top: -14px;
                             padding-left: 15px;
                             height: 35px;
                         }
@@ -1894,11 +1893,21 @@
                 padding-left: 25px;
             }
         }
+
+        .content {
+            .product-item {
+                .product-item-details {
+                    button {
+                        &.action.tocart.primary {
+                            margin-top: -13px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .section-new-arrivals {
-        margin-top: -25px;
-
         .title {
             &::after {
                 top: -13px;
@@ -1908,12 +1917,24 @@
                 padding-left: 29px;
             }
         }
+
+        .content {
+            .product-item {
+                .product-item-details {
+                    button {
+                        &.action.tocart.primary {
+                            margin-top: -11px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     //INSPIRATION EDITED
     .section-outdoor-inspiration {
         margin-bottom: 53px;
-
+        margin-top: -40px;
 
         .title {
             p {
@@ -2128,10 +2149,7 @@
         border: 2px solid;
         padding-bottom: 5px;
     }
-
     //end edited
-
-
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
@@ -2346,6 +2364,42 @@
                     font-family: @font-openSans-bold;
                 }
 
+            }
+        }
+    }
+
+    .section-new-seller {
+        margin-top: 70px;
+        .content {
+            margin-top: 10px;
+        }
+
+        .block-products-list {
+            .slick-slide {
+                .product-item {
+                    .product-item-details {
+                        button {
+                            &.action.tocart.primary {
+                                margin-left: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section-new-arrivals {
+        margin-top: -47px;
+        .content {
+            .product-item {
+                .product-item-details {
+                    button {
+                        &.action.tocart.primary {
+                            margin-left: 2px;
+                        }
+                    }
+                }
             }
         }
     }
