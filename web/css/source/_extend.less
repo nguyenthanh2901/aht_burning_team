@@ -89,6 +89,25 @@
                 @_button-color-hover: @color-black,
                 @_button-border: 1px solid @color-white)
         }
+        //adjustable button
+        &.button-adjust {
+            .lib-button(@_button-background: @color-white,
+                @_button-color: @color-a9,
+                @_button-color-hover: @color-a9,
+                @_button-background-hover: @color-f8,
+                @_button-font-family: @font-roboto-bold,
+                @_button-color-active: @color-a9,
+                @_button-background-active: @color-f8);
+
+            &.active {
+                background: @color-f8;
+            }
+
+            &:visited {
+                background: @color-f8;
+                color: @color-a9;
+            }
+        }
     }
 
     // input field
